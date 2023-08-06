@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { HoverProvider } from './context/HoverContext';
 import styled from 'styled-components';
 import './App.css';
 import Avatar from './components/Avatar';
@@ -8,20 +9,19 @@ const PageWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	overflow-x: hidden;
-	background: rgba(50, 50, 50, 1);
 `;
 
 const GlowingEffect = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 70%;
-	height: 70%;
+	width: 60%;
+	height: 60%;
 	pointer-events: none;
 	background: radial-gradient(
 		circle,
-		rgba(255, 255, 255, 0.8) 3%,
-		transparent 60%
+		rgba(255, 255, 255, 0.8) 2%,
+		transparent 40%
 	);
 	transform: translate(-50%, -50%);
 	opacity: 0;
@@ -84,20 +84,25 @@ function App() {
 		};
 	}, []);
 	return (
-		<PageWrapper>
-			<GlowingEffect
-				className={active ? 'active' : ''}
-				style={{ top: cursorPos.y, left: cursorPos.x }}
-			/>
-			<PageContainer>
-				<PageRow>
-					<PageColumn>
-						<Landing />
-						<Avatar />
-					</PageColumn>
-				</PageRow>
-			</PageContainer>
-		</PageWrapper>
+		<HoverProvider>
+			<PageWrapper>
+				<GlowingEffect
+					className={active ? 'active' : ''}
+					style={{
+						top: cursorPos.y,
+						left: cursorPos.x
+					}}
+				/>
+				<PageContainer>
+					<PageRow>
+						<PageColumn>
+							<Landing />
+							<Avatar />
+						</PageColumn>
+					</PageRow>
+				</PageContainer>
+			</PageWrapper>
+		</HoverProvider>
 	);
 }
 

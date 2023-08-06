@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import usePhoto from '../hooks/usePhoto';
+import { useHover } from '../context/HoverContext';
 
 const AvatarWrapper = styled.div`
 	position: absolute;
@@ -9,11 +10,7 @@ const AvatarWrapper = styled.div`
 	width: auto;
 	background: none;
 	border-radius: 20%;
-	transition: all ease-out 0.3s;
-
-	&:hover {
-		transform: scale(1.1);
-	}
+	filter: ${({ isHovered }) => (isHovered ? 'brightness(120%)' : 'none')};
 `;
 
 const AvatarBackground = styled.div`
@@ -29,7 +26,7 @@ const AvatarBackground = styled.div`
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: 73%;
+		height: 80%;
 		backdrop-filter: blur(20px);
 		border-radius: 2em 2em 0 0;
 		background: linear-gradient(
@@ -47,9 +44,11 @@ const AvatarImage = styled.img`
 `;
 
 const Avatar = () => {
+	const { isHovered } = useHover();
+
 	return (
 		<>
-			<AvatarWrapper>
+			<AvatarWrapper isHovered={isHovered}>
 				<AvatarBackground />
 				<AvatarImage src={usePhoto('HeadshotMask.png')} alt="Headshot" />
 			</AvatarWrapper>
