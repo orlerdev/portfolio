@@ -68,7 +68,7 @@ function App() {
 	const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
 	useEffect(() => {
-		const handleMouseMove = e => {
+		const handleMouseMove = (e) => {
 			setCursorPos({ x: e.clientX, y: e.clientY });
 			setActive(true);
 			// const timeout = setTimeout(() => {
