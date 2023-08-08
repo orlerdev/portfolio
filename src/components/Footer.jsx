@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const FooterWrapper = styled.footer`
 	position: fixed;
@@ -29,15 +29,25 @@ const Footer = () => {
 		<FooterWrapper>
 			<Menu>
 				<Item>
-					<a href="#">Home</a>
+					<a href='#'>Home</a>
 				</Item>
 				<Item>
-					<a href="https://www.linkedin.com/in/orlerjared">
+					<a
+						href='https://www.linkedin.com/in/orlerjared'
+						target='_blank'
+						rel='noreferrer'>
+						Linked
 						<FontAwesomeIcon icon={faLinkedin} />
 					</a>
 				</Item>
 				<Item>
-					<a href="https://www.github.com/orlerdev">GitHub</a>
+					<a
+						href='https://www.github.com/orlerdev'
+						target='_blank'
+						rel='noreferrer'>
+						GitHub
+						<FontAwesomeIcon icon={faGithub} />
+					</a>
 				</Item>
 			</Menu>
 		</FooterWrapper>

@@ -59,7 +59,7 @@ const Landing = () => {
 					onMouseEnter={handleHover}
 					onMouseLeave={handleLeave}>{`Jared`}</span>
 			</IntroWrapper>
-			<h3>Software Developer and proud Veteran</h3>
+			<h3>Full Stack Software Developer and proud US Navy Veteran</h3>
 		</LandingContainer>
 	);
 };
