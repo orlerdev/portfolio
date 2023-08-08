@@ -10,7 +10,7 @@ const AvatarWrapper = styled.div`
 	width: auto;
 	background: none;
 	border-radius: 20%;
-	filter: ${({ isHovered }) => (isHovered ? 'brightness(120%)' : 'none')};
+	filter: ${({ isHovered }) => (isHovered ? 'brightness(110%)' : 'none')};
 `;
 
 const AvatarBackground = styled.div`

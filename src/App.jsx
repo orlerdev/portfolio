@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import './App.css';
 import Avatar from './components/Avatar';
 import Landing from './components/Landing';
+import Footer from './components/Footer';
 
 const PageWrapper = styled.div`
 	display: flex;
@@ -98,6 +99,7 @@ function App() {
 						<PageColumn>
 							<Landing />
 							<Avatar />
+							<Footer />
 						</PageColumn>
 					</PageRow>
 				</PageContainer>
