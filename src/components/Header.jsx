@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -14,14 +15,14 @@ const Nav = styled.nav`
 
 const Menu = styled.ul``;
 
-const Item = styled.li``;
+const Item = styled(Link)``;
 
 const Navbar = () => {
 	<Nav>
 		<Menu>
-			<Item>Home</Item>
-			<Item>About Me</Item>
-			<Item>Professional History</Item>
+			<Item to='/'>Home</Item>
+			<Item to='/about'>About Me</Item>
+			<Item to='/prof'>Professional History</Item>
 		</Menu>
 	</Nav>;
 };

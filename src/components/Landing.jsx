@@ -12,19 +12,20 @@ const LandingContainer = styled.div`
 	height: 50vh;
 	background: rgba(44, 44, 44, 0.2);
 	border-radius: 1em;
+	padding: 0 2em;
 
 	h2 {
-		font-size: 6em;
+		font-size: 4em;
 		margin: 0;
 	}
 
 	h3 {
-		font-size: 4rem;
+		font-size: 3em;
 		margin: 0;
 	}
 
 	span {
-		font-size: 4.5rem;
+		font-size: 3.5rem;
 		margin: 0;
 		display: inline-block;
 	}
@@ -59,7 +60,9 @@ const Landing = () => {
 					onMouseEnter={handleHover}
 					onMouseLeave={handleLeave}>{`Jared`}</span>
 			</IntroWrapper>
-			<h3>Full Stack Software Developer and proud US Navy Veteran</h3>
+			<h3>
+				Full Stack Software Developer <br /> and US Navy Veteran
+			</h3>
 		</LandingContainer>
 	);
 };

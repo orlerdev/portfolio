@@ -10,7 +10,7 @@ const FooterWrapper = styled.footer`
 	height: 80px;
 	display: flex;
 	justify-content: flex-end;
-	padding: 0 20px;
+	padding: 0 40px;
 `;
 
 const Menu = styled.ul`
@@ -18,7 +18,7 @@ const Menu = styled.ul`
 	align-items: center;
 	justify-content: flex-end;
 	font-size: 2em;
-	column-gap: 20px;
+	column-gap: 40px;
 	color: #fff;
 `;
 
