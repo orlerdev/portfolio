@@ -15,12 +15,12 @@ const GlowingEffect = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 60%;
-	height: 60%;
+	width: 80%;
+	height: 80%;
 	pointer-events: none;
 	background: radial-gradient(
 		circle,
-		rgba(255, 255, 255, 0.8) 2%,
+		rgba(255, 255, 255, 0.8) 1%,
 		transparent 40%
 	);
 	transform: translate(-50%, -50%);

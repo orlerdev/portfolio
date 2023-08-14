@@ -1,26 +1,27 @@
-import { createBrowserRouter } from 'react-router-dom';
-import DefaultLayout from './layouts/DefaultLayout';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import ProfessionalHistory from './pages/ProfessionalHistory';
 
-createBrowserRouter([
+const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Home />
+		element: <Home/>
 	},
 	{
 		path: '/about',
-		element: <About />
+		element: <About/>
 	},
 	{
 		path: '/professional-history',
-		element: <ProfessionalHistory />
+		element: <ProfessionalHistory/>
 	}
 ]);
 
 const App = () => {
-	return <DefaultLayout></DefaultLayout>;
+	return (
+			<RouterProvider router={router} />
+	);
 };
 
 export default App;

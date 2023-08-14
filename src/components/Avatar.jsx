@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import usePhoto from '../hooks/usePhoto';
+// import usePhoto from '../hooks/usePhoto';
 import { useHover } from '../context/HoverContext';
+import headshot from '../assets/Headshot.png';
 
 const AvatarWrapper = styled.div`
 	position: absolute;
@@ -11,6 +12,7 @@ const AvatarWrapper = styled.div`
 	background: none;
 	border-radius: 20%;
 	filter: ${({ isHovered }) => (isHovered ? 'brightness(110%)' : 'none')};
+	//transform: ${({ isHovered }) => (isHovered ? 'none' : 'translate(-20%, 0)')};
 `;
 
 const AvatarBackground = styled.div`
@@ -50,7 +52,8 @@ const Avatar = () => {
 		<>
 			<AvatarWrapper isHovered={isHovered}>
 				<AvatarBackground />
-				<AvatarImage src={usePhoto('HeadshotMask.png')} alt="Headshot" />
+				{/*<AvatarImage src={usePhoto('HeadshotMask.png')} alt="Headshot" />*/}
+				<AvatarImage src={headshot} alt="Headshot" />
 			</AvatarWrapper>
 		</>
 	);
