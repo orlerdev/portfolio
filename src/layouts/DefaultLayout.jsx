@@ -97,7 +97,7 @@ const DefaultLayout = ({ children }) => {
 					<PageRow>
 						<PageColumn>
 							<Header />
-							<main>{children}</main>
+							<main style={{marginTop:'100px'}}>{children}</main>
 							<Footer />
 						</PageColumn>
 					</PageRow>
