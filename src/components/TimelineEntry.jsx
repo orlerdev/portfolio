@@ -1,33 +1,39 @@
 import PropTypes from "prop-types";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Entry = styled.div`
-  display:flex;
-  align-content:center;
-  justify-content:center;
-  height: 300px;
-  width: 600px;
+  display: flex;
+  flex-direction:column;
+  align-content: center;
+  justify-content: space-between;
+  height: 30%;
+  width: 30%;
+  text-align: center;
 `;
 const Title = styled.h2``;
 const Photo = styled.img`
   width: 250px;
   height: 250px;
 `;
+const Wrapper = styled.div``;
 
-
-const TimelineEntry = ({title, photo}) => {
+const TimelineEntry = ({ title, photo }) => {
   return (
     <Entry>
-      <Title>{title}</Title>
-      <Photo src={photo} alt="Timeline photo"/>
+      <Wrapper>
+        <Title>{title}</Title>
+      </Wrapper>
+      <Wrapper>
+        <Photo src={photo} alt="Timeline photo" />
+      </Wrapper>
     </Entry>
-  )
+  );
 
-}
+};
 
 export default TimelineEntry;
 
 TimelineEntry.propTypes = {
   title: PropTypes.string.isRequired,
-  photo: PropTypes.string.isRequired
-}
+  photo: PropTypes.node.isRequired
+};

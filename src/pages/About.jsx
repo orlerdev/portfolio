@@ -3,7 +3,14 @@ import usePhoto from "../hooks/usePhoto.jsx";
 import DefaultLayout from "../layouts/DefaultLayout.jsx";
 import TimelineEntry from "../components/TimelineEntry.jsx";
 
-const Entries = styled.div``;
+const Entries = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-content: center;
+  row-gap:20px;
+  width:100%;
+  height:100%;
+`;
 
 const About = () => {
   const photo1 = usePhoto("navy2.png");
@@ -13,10 +20,10 @@ const About = () => {
   return (
     <DefaultLayout>
       <Entries>
-        <TimelineEntry title={"2007-2012: USS Carl Vinson(CVN-70)"} photo={photo1} />
-        <TimelineEntry title={"2012-2015: Recruit Training Command (RTC)"} photo={photo2} />
-        <TimelineEntry title={"2015-2020: USS Michael Monsoor(DDG-1001)"} photo={photo3} />
-        <TimelineEntry title={"2020-2022: HSM-41"} photo={photo4} />
+        <TimelineEntry title={"2007-2012"} photo={photo1} />
+        <TimelineEntry title={"2012-2015"} photo={photo2} />
+        <TimelineEntry title={"2015-2020"} photo={photo3} />
+        <TimelineEntry title={"2020-2022"} photo={photo4} />
       </Entries>
     </DefaultLayout>
   );
