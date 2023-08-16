@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -12,6 +12,7 @@ const Nav = styled.nav`
 	height: 80px;
 	padding: 10px 20px 0 20px;
 	background: transparent;
+	backdrop-filter: blur(20px);
 	border: none;
 	outline: none;
 `;
@@ -21,7 +22,7 @@ const Menu = styled.ul`
 	column-gap:20px;
 `;
 
-const Item = styled(Link)`
+const Item = styled(NavLink)`
 	padding:5px 10px;
 	transition: all ease-out .3s;
 	
@@ -38,7 +39,6 @@ const Navbar = () => {
 		<Menu>
 			<Item to='/'>Home</Item>
 			<Item to='/about'>About Me</Item>
-			<Item to='/prof'>Professional History</Item>
 		</Menu>
 	</Nav>
 	)
