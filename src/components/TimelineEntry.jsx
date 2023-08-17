@@ -3,27 +3,27 @@ import styled from "styled-components";
 
 const Entry = styled.div`
   display: flex;
-  flex-direction:column;
-  align-content: center;
+  align-items: center;
   justify-content: space-between;
-  height: 30%;
-  width: 30%;
-  text-align: center;
+  height: 50%;
+  width: 50%;
 `;
 const Title = styled.h2``;
 const Photo = styled.img`
   width: 250px;
   height: 250px;
 `;
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  flex: 1;
+`;
 
 const TimelineEntry = ({ title, photo }) => {
   return (
-    <Entry>
-      <Wrapper>
-        <Title>{title}</Title>
+    <Entry className='entry'>
+      <Wrapper className='wrapper'>
+        <Title className='title'>{title}</Title>
       </Wrapper>
-      <Wrapper>
+      <Wrapper className='wrapper'>
         <Photo src={photo} alt="Timeline photo" />
       </Wrapper>
     </Entry>

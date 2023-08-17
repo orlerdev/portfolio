@@ -6,10 +6,11 @@ import TimelineEntry from "../components/TimelineEntry.jsx";
 const Entries = styled.div`
   display:flex;
   flex-direction:column;
-  align-content: center;
+  justify-content:center;
+  align-items: center;
   row-gap:20px;
-  width:100%;
-  height:100%;
+  width:75%;
+  height:100vh;
 `;
 
 const About = () => {
@@ -19,11 +20,11 @@ const About = () => {
   const photo4 = usePhoto("navy4.png");
   return (
     <DefaultLayout>
-      <Entries>
-        <TimelineEntry title={"2007-2012"} photo={photo1} />
-        <TimelineEntry title={"2012-2015"} photo={photo2} />
-        <TimelineEntry title={"2015-2020"} photo={photo3} />
-        <TimelineEntry title={"2020-2022"} photo={photo4} />
+      <Entries className='entries'>
+        <TimelineEntry title={"2007-2012: USS Carl Vinson(CVN70)"} photo={photo1} />
+        <TimelineEntry title={"2012-2015: Recruit Training Command(RTC)"} photo={photo2} />
+        <TimelineEntry title={"2015-2020: USS Michael Monsoor(DDG1001)"} photo={photo3} />
+        <TimelineEntry title={"2020-2022: HSM-41 Seahawks"} photo={photo4} />
       </Entries>
     </DefaultLayout>
   );
