@@ -59,6 +59,7 @@ const PageColumn = styled.div`
 	flex:1 0 0;
 	align-items: center;
 	flex-wrap:wrap;
+	margin-top:100px;
 `;
 
 const DefaultLayout = ({ children }) => {

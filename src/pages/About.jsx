@@ -4,13 +4,24 @@ import DefaultLayout from "../layouts/DefaultLayout.jsx";
 import TimelineEntry from "../components/TimelineEntry.jsx";
 
 const Entries = styled.div`
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  row-gap:20px;
-  width:75%;
-  height:100vh;
+  row-gap: 20px;
+  width: 75%;
+  height: 100vh;
+  transform: ${({ isScrolling }) => (isScrolling ? 'translateX(0)' : 'translateX(400%)')};
+  transition:transform .4s ease;
+  
+  &:nth-of-type(even) {
+    transform: ${({ isScrolling }) => (isScrolling ? 'translateX(0)' : 'translateX(-400%)')};
+  }
+  
+  &.show{
+    transform: translateX(0);
+  }
+  
 `;
 
 const About = () => {
@@ -18,9 +29,10 @@ const About = () => {
   const photo2 = usePhoto("navy9.png");
   const photo3 = usePhoto("navy6.png");
   const photo4 = usePhoto("navy4.png");
+
   return (
     <DefaultLayout>
-      <Entries className='entries'>
+      <Entries className="entries">
         <TimelineEntry title={"2007-2012: USS Carl Vinson(CVN70)"} photo={photo1} />
         <TimelineEntry title={"2012-2015: Recruit Training Command(RTC)"} photo={photo2} />
         <TimelineEntry title={"2015-2020: USS Michael Monsoor(DDG1001)"} photo={photo3} />
