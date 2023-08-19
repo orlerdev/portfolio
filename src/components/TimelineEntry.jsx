@@ -18,12 +18,11 @@ const Entry = styled.div`
 `;
 const Title = styled.h2``;
 const Photo = styled.img`
-  width: 250px;
-  height: 250px;
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: contain;
 `;
-const Wrapper = styled.div`
-  flex: 1;
-`;
+
 
 const TimelineEntry = ({ title, photo }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,12 +50,8 @@ const TimelineEntry = ({ title, photo }) => {
 
   return (
     <Entry $isVisible={isVisible} ref={boxRef}>
-      <Wrapper className="wrapper">
         <Title className="title">{title}</Title>
-      </Wrapper>
-      <Wrapper className="wrapper">
         <Photo src={photo} alt="Timeline photo" />
-      </Wrapper>
     </Entry>
   );
 
