@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -8,15 +8,11 @@ const Entry = styled.div`
   justify-content: space-between;
   height: 50%;
   width: 50%;
-  transform: translateX(400%);
+  transform: ${({ isVisible }) => (isVisible ? "translateX(0)" : "translateX(400%")};
   transition: transform .4s ease;
 
   &:nth-of-type(even) {
-    transform: translateX(-400%);
-  }
-
-  &.show {
-    transform: translate(0);
+    transform: ${({ $isVisible }) => ($isVisible ? "translateX(0)" : "translateX(-400%)")};
   }
 
 `;
@@ -31,12 +27,10 @@ const Wrapper = styled.div`
 
 const TimelineEntry = ({ title, photo }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const boxRef = useRef(null);
 
-
-    const boxRef = React.createRef();
   useEffect(() => {
-
-    const showEntries = () => {
+    const showEntry = () => {
       const triggerBottom = window.innerHeight / 5 * 4;
       const entryTop = boxRef.current.getBoundingClientRect().top;
 
@@ -46,16 +40,17 @@ const TimelineEntry = ({ title, photo }) => {
         setIsVisible(false);
       }
     };
-    window.addEventListener("scroll", showEntries);
-    showEntries();
-    return () => {
-      window.removeEventListener("scroll", showEntries);
-    };
-  }, [boxRef]);
+    window.addEventListener("scroll", showEntry);
+    showEntry();
 
+    return () => {
+      window.removeEventListener("scroll", showEntry);
+    };
+
+  }, []);
 
   return (
-    <Entry ref={boxRef} className={isVisible ? "show" : ""}>
+    <Entry $isVisible={isVisible} ref={boxRef}>
       <Wrapper className="wrapper">
         <Title className="title">{title}</Title>
       </Wrapper>
@@ -71,5 +66,5 @@ export default TimelineEntry;
 
 TimelineEntry.propTypes = {
   title: PropTypes.string.isRequired,
-  photo: PropTypes.node.isRequired
+  photo: PropTypes.string.isRequired
 };

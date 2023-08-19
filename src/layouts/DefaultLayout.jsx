@@ -59,7 +59,6 @@ const PageColumn = styled.div`
 	flex:1 0 0;
 	align-items: center;
 	flex-wrap:wrap;
-	margin-top:100px;
 `;
 
 const DefaultLayout = ({ children }) => {
@@ -70,11 +69,6 @@ const DefaultLayout = ({ children }) => {
 		const handleMouseMove = (e) => {
 			setCursorPos({ x: e.clientX, y: e.clientY });
 			setActive(true);
-			// const timeout = setTimeout(() => {
-			// 	setActive(false);
-			// }, 6000);
-
-			// return () => clearTimeout(timeout);
 		};
 
 		document.addEventListener('mousemove', handleMouseMove);
@@ -85,7 +79,7 @@ const DefaultLayout = ({ children }) => {
 	}, []);
 	return (
 		<HoverProvider>
-			<PageWrapper className='pagewrapper'>
+			<PageWrapper className='pagewrapper' style={{marginTop:'80px'}}>
 				<GlowingEffect
 					className={active ? 'active' : ''}
 					style={{

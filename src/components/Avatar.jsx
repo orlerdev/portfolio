@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled from 'styled-components';
 // import usePhoto from '../hooks/usePhoto';
 import { useHover } from '../context/HoverContext';
@@ -59,3 +60,7 @@ const Avatar = () => {
 	);
 };
 export default Avatar;
+
+Avatar.propTypes = {
+	isHovered: PropTypes.func
+}
