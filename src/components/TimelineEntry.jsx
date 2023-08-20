@@ -8,16 +8,20 @@ const Entry = styled.div`
   justify-content: space-between;
   height: 50%;
   width: 50%;
-  transform: ${({ isVisible }) => (isVisible ? "translateX(0)" : "translateX(400%")};
+  transform: ${({ isVisible }) => (isVisible ? "translateX(0)" : "translateX(100%")};
   transition: transform .4s ease;
 
   &:nth-of-type(even) {
-    transform: ${({ $isVisible }) => ($isVisible ? "translateX(0)" : "translateX(-400%)")};
+    transform: ${({ $isVisible }) => ($isVisible ? "translateX(0)" : "translateX(-100%)")};
   }
 
 `;
-const Title = styled.h2``;
+const Title = styled.h2`
+  flex:1;
+`;
+
 const Photo = styled.img`
+  flex:1;
   max-width: 250px;
   max-height: 250px;
   object-fit: contain;
@@ -51,7 +55,7 @@ const TimelineEntry = ({ title, photo }) => {
   return (
     <Entry $isVisible={isVisible} ref={boxRef}>
         <Title className="title">{title}</Title>
-        <Photo src={photo} alt="Timeline photo" />
+        <Photo src={photo} alt="Timeline photo" style={{height:'25%', width:'25%', objectFit:'cover'}} />
     </Entry>
   );
 
