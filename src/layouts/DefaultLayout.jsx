@@ -9,7 +9,9 @@ const PageWrapper = styled.div`
 	min-height:100vh;
   display: flex;
 	flex-direction: column;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y:hidden;
+	padding:100px 20px;
 `;
 
 const GlowingEffect = styled.div`
@@ -43,23 +45,23 @@ const GlowingEffect = styled.div`
 	}
 `;
 
-const PageContainer = styled.div`
-	display:flex;
-  flex-direction:column;
-  align-items:center;
-`;
-const PageRow = styled.div`
-	display: flex;
-	width:100%;
-  flex:1 0 0;
-`;
-const PageColumn = styled.div`
-	display: flex;
-	flex-direction: column;
-	flex:1 0 0;
-	align-items: center;
-	flex-wrap:wrap;
-`;
+// const PageContainer = styled.div`
+// 	display:flex;
+//   flex-direction:column;
+//   align-items:center;
+// `;
+// const PageRow = styled.div`
+// 	display: flex;
+// 	flex:1 0 0;
+// `;
+// const PageColumn = styled.div`
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   flex-wrap: wrap;
+// `;
 
 const DefaultLayout = ({ children }) => {
 	const [active, setActive] = useState(false);
@@ -79,7 +81,7 @@ const DefaultLayout = ({ children }) => {
 	}, []);
 	return (
 		<HoverProvider>
-			<PageWrapper className='pagewrapper' style={{marginTop:'80px'}}>
+			<PageWrapper>
 				<GlowingEffect
 					className={active ? 'active' : ''}
 					style={{
@@ -87,15 +89,15 @@ const DefaultLayout = ({ children }) => {
 						left: cursorPos.x
 					}}
 				/>
-				<PageContainer className='pagecontainer'>
-					<PageRow className='pagerow'>
-						<PageColumn className='pagecolumn'>
+				{/*<PageContainer>*/}
+				{/*	<PageRow>*/}
+				{/*		<PageColumn>*/}
 							<Header />
 							{children}
 							<Footer />
-						</PageColumn>
-					</PageRow>
-				</PageContainer>
+				{/*		</PageColumn>*/}
+				{/*	</PageRow>*/}
+				{/*</PageContainer>*/}
 			</PageWrapper>
 		</HoverProvider>
 	);
