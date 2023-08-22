@@ -45,23 +45,22 @@ const GlowingEffect = styled.div`
 	}
 `;
 
-// const PageContainer = styled.div`
-// 	display:flex;
-//   flex-direction:column;
-//   align-items:center;
-// `;
-// const PageRow = styled.div`
-// 	display: flex;
-// 	flex:1 0 0;
-// `;
-// const PageColumn = styled.div`
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   flex-wrap: wrap;
-// `;
+const PageContainer = styled.div`
+	display:flex;
+  flex-direction:column;
+  align-items:center;
+`;
+const PageRow = styled.div`
+	display: flex;
+	flex:1 0 0;
+`;
+const PageColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`;
 
 const DefaultLayout = ({ children }) => {
 	const [active, setActive] = useState(false);
@@ -89,15 +88,15 @@ const DefaultLayout = ({ children }) => {
 						left: cursorPos.x
 					}}
 				/>
-				{/*<PageContainer>*/}
-				{/*	<PageRow>*/}
-				{/*		<PageColumn>*/}
+				<PageContainer>
+					<PageRow>
+						<PageColumn>
 							<Header />
 							{children}
 							<Footer />
-				{/*		</PageColumn>*/}
-				{/*	</PageRow>*/}
-				{/*</PageContainer>*/}
+						</PageColumn>
+					</PageRow>
+				</PageContainer>
 			</PageWrapper>
 		</HoverProvider>
 	);
