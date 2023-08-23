@@ -10,7 +10,9 @@ const HomeWrapper = styled.div`
 	display:flex;
 	flex-direction:column;
 	row-gap:20px;
-	padding:40px;
+	padding: 0 40px;
+	height:100%;
+	overflow:hidden;
 `;
 
 const Home = () => {

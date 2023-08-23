@@ -5,69 +5,88 @@ const token = import.meta.env.VITE_GITHUB;
 
 const useGitHub = (username) => {
   // const [contributions, setContributions] = useState(null);
-  const [monthlyContributions, setMonthlyContributions] = useState([]);
+  const [contributionsData, setContributionsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const query = `
-		{
-			user(login: "${username}") {
-				contributionsCollection {
-					contributionCalendar {
-						totalContributions
-							weeks {
-								contributionDays {
-									contributionCount
-									date
-								}
-							}
-						}
-					}
-				}
-		}
-		`;
+      query GetUserContributions($username: String!) {
+          user(login: $username) {
+            contributionsCollection {
+              contributionCalendar {
+                weeks {
+                  contributionDays {
+                    date
+                    contributionCount
+                  }
+                }
+              }
+            }
+          }
+        }
+    `;
 
     const headers = {
       Authorization: `Bearer ${token}`
     };
 
-    // const fetchData = async () => {
-    // 	try {
-    // 		const res = await axios.post('https://api.github.com/graphql', {query}, {headers});
-    // 		setContributions(res.data.data.user.contributionsCollection.contributionCalendar);
-    // 		setLoading(false);
-    // 	} catch (error) {
-    // 		setError(error);
-    // 		setLoading(false);
-    // 	}
-    // };
 
-    const fetchData = async () => {
-      try {
-        const res = await axios.post('https://api.github.com/graphql', { query }, { headers });
-        const contributionDays = res.data.data.user.contributionsCollection.contributionsCalendar.weeks.flatMap(week => week.contributionDays);
-        const contributionsByMonth = {};
-        contributionDays.forEach(day => {
-          const date = new Date(day.date);
-          const monthYear = `${date.getFullYear()}-${date.getMonth() + 1}`;
-          if (!contributionsByMonth[monthYear]) {
-            contributionsByMonth[monthYear] = 0;
-          }
-          contributionsByMonth[monthYear] += day.contributionCount;
-        });
+const fetchData = async () => {
+  try {
+    const res = await axios.post('https://api.github.com/graphql', { query, variables: {username} }, { headers });
+    const weeks = res.data.data.user.contributionsCollection.contributionCalendar.weeks;
 
-        setMonthlyContributions(contributionsByMonth);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
+
+    const last3Months = new Date(currentYear, currentMonth - 2);
+    const last6Months = new Date(currentYear, currentMonth - 5);
+    const lastYear = new Date(currentYear - 1, currentMonth);
+
+    const contributionsData = {
+      currentMonth: 0,
+      last3Months: 0,
+      last6Months: 0,
+      lastYear: 0,
     };
-    fetchData();
+
+    weeks.forEach(week => {
+      week.contributionDays.forEach(day => {
+        const date = new Date(day.date);
+        if (date >= lastYear) {
+          contributionsData.lastYear += day.contributionCount;
+          if (date >= last6Months) {
+            contributionsData.last6Months += day.contributionCount;
+            if (date >= last3Months) {
+              contributionsData.last3Months += day.contributionCount;
+              if (date >= currentMonth) {
+                contributionsData.currentMonth += day.contributionCount;
+              }
+            }
+          }
+        }
+      });
+    });
+
+    console.log('Contributions data:', contributionsData);
+
+    setContributionsData(contributionsData)
+
+
+    setLoading(false);
+  } catch (error) {
+    setError(error);
+    setLoading(false);
+  }
+};
+
+fetchData();
+
   }, [username]);
 
-  return { monthlyContributions, loading, error };
+  return { contributionsData, loading, error };
 };
 
 export default useGitHub;

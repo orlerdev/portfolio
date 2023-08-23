@@ -6,12 +6,11 @@ import styled from 'styled-components';
 import { HoverProvider } from '../context/HoverContext';
 
 const PageWrapper = styled.div`
-	min-height:100vh;
+	height: calc(100vh - 100px);
   display: flex;
 	flex-direction: column;
 	overflow-x: hidden;
 	overflow-y:hidden;
-	padding:100px 20px;
 `;
 
 const GlowingEffect = styled.div`
