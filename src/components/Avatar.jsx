@@ -1,3 +1,4 @@
+// import PropTypes from "prop-types";
 import styled from 'styled-components';
 // import usePhoto from '../hooks/usePhoto';
 import { useHover } from '../context/HoverContext';
@@ -7,8 +8,8 @@ const AvatarWrapper = styled.div`
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	height: 350px;
-	width: auto;
+	height: auto;
+	width: 12%;
 	background: none;
 	border-radius: 20%;
 	filter: ${({ isHovered }) => (isHovered ? 'brightness(110%)' : 'none')};
@@ -59,3 +60,7 @@ const Avatar = () => {
 	);
 };
 export default Avatar;
+//
+// Avatar.propTypes = {
+// 	isHovered: PropTypes.func
+// }

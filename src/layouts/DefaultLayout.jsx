@@ -6,9 +6,11 @@ import styled from 'styled-components';
 import { HoverProvider } from '../context/HoverContext';
 
 const PageWrapper = styled.div`
-	display: flex;
+	height: calc(100vh - 100px);
+  display: flex;
 	flex-direction: column;
 	overflow-x: hidden;
+	overflow-y:hidden;
 `;
 
 const GlowingEffect = styled.div`
@@ -43,23 +45,20 @@ const GlowingEffect = styled.div`
 `;
 
 const PageContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	display:flex;
+  flex-direction:column;
+  align-items:center;
 `;
 const PageRow = styled.div`
 	display: flex;
-	flex: 1 0 0;
+	flex:1 0 0;
 `;
 const PageColumn = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	row-gap: 40px;
-	width: 100%;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
 const DefaultLayout = ({ children }) => {
@@ -70,11 +69,6 @@ const DefaultLayout = ({ children }) => {
 		const handleMouseMove = (e) => {
 			setCursorPos({ x: e.clientX, y: e.clientY });
 			setActive(true);
-			// const timeout = setTimeout(() => {
-			// 	setActive(false);
-			// }, 6000);
-
-			// return () => clearTimeout(timeout);
 		};
 
 		document.addEventListener('mousemove', handleMouseMove);
@@ -97,7 +91,7 @@ const DefaultLayout = ({ children }) => {
 					<PageRow>
 						<PageColumn>
 							<Header />
-							<main style={{marginTop:'100px'}}>{children}</main>
+							{children}
 							<Footer />
 						</PageColumn>
 					</PageRow>

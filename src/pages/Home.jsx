@@ -6,7 +6,14 @@ import Contributions from '../components/Contributions.jsx';
 
 const username = import.meta.env.VITE_USERNAME;
 
-const HomeWrapper = styled.div``;
+const HomeWrapper = styled.div`
+	display:flex;
+	flex-direction:column;
+	row-gap:20px;
+	padding: 0 40px;
+	height:100%;
+	overflow:hidden;
+`;
 
 const Home = () => {
 	return (
