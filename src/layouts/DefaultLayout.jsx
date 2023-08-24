@@ -9,8 +9,6 @@ const PageWrapper = styled.div`
 	height: calc(100vh - 100px);
   display: flex;
 	flex-direction: column;
-	overflow-x: hidden;
-	overflow-y:hidden;
 `;
 
 const GlowingEffect = styled.div`
