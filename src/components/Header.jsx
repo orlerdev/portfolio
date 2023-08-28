@@ -39,6 +39,7 @@ const Navbar = () => {
 		<Menu>
 			<Item to='/'>Home</Item>
 			<Item to='/about'>About Me</Item>
+			<Item to='/projects'>Projects</Item>
 		</Menu>
 	</Nav>
 	)

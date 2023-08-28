@@ -49,7 +49,8 @@ const PageContainer = styled.div`
 `;
 const PageRow = styled.div`
 	display: flex;
-	flex:1 0 0;
+	max-width:1100px;	
+	justify-content: center;
 `;
 const PageColumn = styled.div`
   display: flex;
@@ -57,6 +58,7 @@ const PageColumn = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+	padding-top:120px;
 `;
 
 const DefaultLayout = ({ children }) => {

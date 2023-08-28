@@ -11,7 +11,7 @@ const Entries = styled.div`
   row-gap: 40px;
   min-width: 100vw;
   min-height: 100vh;
-  margin-top: 100px;
+  margin-top: 120px;
   overflow-x: hidden;
   overflow-y: auto;
 `;
@@ -28,6 +28,7 @@ const Entry = styled.div`
 const TextWrapper = styled.div`
   display:flex;
   flex-direction:column;
+  justify-content:space-between;
   row-gap:10px;
 `;
 
@@ -37,13 +38,14 @@ const Title = styled.h2`
 
 const AboutBody = styled.ul`
   max-width:70%;
+  max-height: 100%;
   list-style-type: none;
   display:flex;
   flex-direction:column;
   row-gap:10px;
   
   li{
-    padding-left: 1em;
+    padding-left: 1.5em;
     text-indent: -1em;
   }
   
@@ -54,8 +56,8 @@ const AboutBody = styled.ul`
 
 const Photo = styled.img`
   flex: 1;
-  width: 100%;
-  height: 100%;
+  max-width: 400px;
+  max-height: 400px;
   aspect-ratio: auto;
   object-fit: contain;
   object-position:center;
@@ -66,9 +68,20 @@ const About = () => {
   const photo2 = usePhoto('navy9.png');
   const photo3 = usePhoto('navy6.png');
   const photo4 = usePhoto('navy4.png');
+  const familyPhoto = usePhoto('familyPhoto.png')
   return (
     <DefaultLayout>
       <Entries>
+        <Entry>
+          <TextWrapper>
+            <Title>Family</Title>
+            <AboutBody>
+              <li>I&apos;m a husband and father of two</li>
+              <li>We&apos;ve moved 6 times in the past 15 1/2 years, and we&apos;ve lived in 5 different states</li>
+            </AboutBody>
+          </TextWrapper>
+            <Photo src={familyPhoto} alt='Family photo' />
+        </Entry>
         <Entry>
           <TextWrapper>
           <Title>&quot;2007-2012: USS Carl Vinson(CVN70)&quot;</Title>
@@ -96,7 +109,6 @@ const About = () => {
             <AboutBody>
               <li>Essential in the creation of unique ZUMWALT damage control doctrine</li>
               <li>Delivered 300+ hours of dynamic damage control training and assessed 100+ casualty scenarios, resulting in a fully qualified crew</li>
-              <li>Served as Damage Control Warfare Manager, Damage Control Training Team Coordinator, Fire Marshal, Gas Free Engineer, Quality Assurance Officer, Education Services Officer, Command Managed Equal Opportunity Manager, and Motorcycle Safety Manager</li>
             </AboutBody>
             </TextWrapper>
           <Photo src={photo3} alt="Entry photo" />
@@ -107,7 +119,6 @@ const About = () => {
             <AboutBody>
               <li>Responsible for supervising 120 personnel in the maintenance and upkeep of all squadron working spaces, establishing a structured and safe environment</li>
               <li>Personnel onboarding manager and Leading Petty Officer. Implemented a comprehensive overhaul of unreliable standards and procedures, leading to an 80% reduction in administrative delinquencies.</li>
-              <li>Conducted 100+ personnel performance evaluations, facilitating professional development of the crew.</li>
             </AboutBody>
             </TextWrapper>
           <Photo src={photo4} alt="Entry photo" />
