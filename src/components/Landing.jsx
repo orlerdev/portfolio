@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useHover } from '../context/HoverContext';
+import Avatar from './Avatar.jsx';
 
 const LandingContainer = styled.div`
   position: relative;
@@ -13,6 +14,7 @@ const LandingContainer = styled.div`
   background: rgba(44, 44, 44, 0.2);
   border-radius: 1em;
   padding: 2em;
+  margin-top: 100px;
   
   h3 {
     font-size: 2.3rem;
@@ -53,6 +55,7 @@ const Landing = () => {
 
   return (
     <LandingContainer>
+      <Avatar />
       <LandingH2>{`Hi!`}</LandingH2>
       <IntroWrapper>
         <LandingSpan>{`I'm`}</LandingSpan>

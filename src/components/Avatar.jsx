@@ -8,8 +8,8 @@ const AvatarWrapper = styled.div`
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	height: auto;
-	width: 12rem;
+	height: 20rem;
+	width: auto;
 	background: none;
 	border-radius: 20%;
 	filter: ${({ isHovered }) => (isHovered ? 'brightness(110%)' : 'none')};
