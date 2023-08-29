@@ -1,13 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import babelConfig from './babel.config'; // Adjust the path accordingly
+import babelConfig from './babel.config';
 
 export default defineConfig({
   plugins: [
     react()
   ],
   rollupInputOptions: {
-    // This will instruct Vite to use your custom Babel configuration
     plugins: [
       {
         name: 'vite-plugin-babel',
