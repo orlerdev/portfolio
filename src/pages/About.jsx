@@ -1,48 +1,49 @@
 import DefaultLayout from '../layouts/DefaultLayout.jsx';
 import usePhoto from '../hooks/usePhoto.jsx';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import { media } from '../styles/utils.js';
 import PropTypes from 'prop-types';
 
 const Entries = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 40px;
-  min-width: 100vw;
-  min-height: 100vh;
-  margin-top: 120px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  row-gap:40px;
 `;
 
 const Entry = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 40px;
-  justify-content: space-between;
-  height: 50vh;
-  width: 80vw;
+  display:flex;
+  justify-content:space-between;
+  background: rgba(44,44,44,.2);
+  padding:10px 0 10px 10px;
+  border-radius:1em;
+  
+  
+  ${media.small`
+    flex-direction:column;
+    row-gap:40px;
+    align-items:center;
+  `}
+  
 `;
 
 const TextWrapper = styled.div`
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
-  row-gap:10px;
+  row-gap:20px;
+  max-width:50%;
+  
+  ${media.small`
+    max-width:100%;
+  `}
 `;
 
 const Title = styled.h2`
-  flex: 1;
+  text-align: center;
 `;
 
 const AboutBody = styled.ul`
-  max-width:70%;
-  max-height: 100%;
-  list-style-type: none;
-  display:flex;
-  flex-direction:column;
-  row-gap:10px;
+  
   
   li{
     padding-left: 1.5em;
@@ -55,12 +56,15 @@ const AboutBody = styled.ul`
 `;
 
 const Photo = styled.img`
-  flex: 1;
-  max-width: 400px;
-  max-height: 400px;
-  aspect-ratio: auto;
+  max-width: 30%;
+  max-height:100%;
+  aspect-ratio:auto;
   object-fit: contain;
-  object-position:center;
+  border-radius:1em;
+  
+  ${media.small`
+    max-width:100%;
+  `}
 `;
 
 const About = () => {
