@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import { media } from '../styles/utils.js';
 import DefaultLayout from '../layouts/DefaultLayout';
 import Landing from '../components/Landing';
 import TechStack from '../components/TechStack.jsx';
@@ -15,6 +16,17 @@ const HomeWrapper = styled.div`
 	min-height:100vh;
 	overflow-x:hidden;
 	overflow-y:auto;
+	
+	${media.medium`
+		padding: 30px;
+		row-gap: 30px;
+	`}
+	
+	${media.small`
+		padding: 0 20px;
+		row-gap: 20px;
+	`}
+	
 `;
 
 const Home = () => {

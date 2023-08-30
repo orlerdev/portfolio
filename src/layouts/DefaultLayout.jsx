@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import { media } from '../styles/utils.js';
 import { HoverProvider } from '../context/HoverContext';
 
 const PageWrapper = styled.div`
@@ -40,6 +41,11 @@ const GlowingEffect = styled.div`
 			/* transform: scale(1.1); */
 		}
 	}
+	
+	${media.small`
+		display:none;
+	`}
+	
 `;
 
 const PageContainer = styled.div`
@@ -51,6 +57,12 @@ const PageRow = styled.div`
 	display: flex;
 	max-width:1100px;	
 	justify-content: center;
+	padding:20px;
+	
+	${media.xs`
+		padding:0;
+	`}
+	
 `;
 const PageColumn = styled.div`
   display: flex;
