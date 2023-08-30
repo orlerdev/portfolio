@@ -1,9 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
 import styled from '@emotion/styled';
 import { media } from '../styles/utils.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import MobileMenu from '../components/MobileMenu.jsx';
 
 const Nav = styled.nav`
   position: fixed;
@@ -15,34 +13,33 @@ const Nav = styled.nav`
   width: 100%;
   height: 80px;
   padding: 10px 20px 0 20px;
-  background: transparent;
+  background: rgba(255,255,255,.2);
   backdrop-filter: blur(20px);
   border: none;
   outline: none;
   transition: all ease .4s;
 
   ${media.small`
-    justify-content:flex-start;
+    justify-content:center;
     left: 50%;
     transform: translateX(-50%);
-    flex-direction:column;
     align-items:center;
   `}
 `;
 
 const Menu = styled.ul`
   display: flex;
-  column-gap: 10px;
-
-  ${media.small`
-    flex-direction:column;
-    align-items:center;
+  column-gap: 10px;  
+  
+  ${media.xs`
+    display:none;
   `}
 `;
 
 const Item = styled(NavLink)`
   padding: 5px 10px;
   transition: all ease-out .3s;
+  flex:1 1 auto;
 
   &:hover {
     background: rgba(255, 255, 255, .2);
@@ -51,30 +48,21 @@ const Item = styled(NavLink)`
   }
 `;
 
-const Bars = styled(FontAwesomeIcon)`
-  display: none;
 
-  ${media.small`
-    display:block;
-    cursor:pointer;
-  `}
-`;
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+
   return (
     <Nav>
-      <Menu style={{ display: isOpen ? 'flex' : 'none' }}>
+      <MobileMenu />
+      <Menu>
         <Item to="/">Home</Item>
         <span>|</span>
         <Item to="/about">About</Item>
         <span>|</span>
         <Item to="/projects">Projects</Item>
       </Menu>
-      <Bars icon={faBars} onClick={toggleMenu} />
+
     </Nav>
   );
 };
