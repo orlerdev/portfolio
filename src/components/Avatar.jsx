@@ -5,13 +5,16 @@ import { useHover } from '../context/HoverContext';
 import headshot from '../assets/Headshot.png';
 
 const AvatarWrapper = styled.div`
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 20rem;
-	width: auto;
+	position:fixed;
+	top:20px;
+	right:20px;
+	max-height:10%;
+	max-width: 10%;
+	height: auto;
+	width: 30%;
 	background: none;
-	border-radius: 20%;
+	border-radius: .2em;
+	z-index: 6;
 	filter: ${({ isHovered }) => (isHovered ? 'brightness(110%)' : 'none')};
 	//transform: ${({ isHovered }) => (isHovered ? 'none' : 'translate(-20%, 0)')};
 `;
@@ -31,7 +34,7 @@ const AvatarBackground = styled.div`
 		width: 100%;
 		height: 80%;
 		backdrop-filter: blur(20px);
-		border-radius: 2em 2em 0 0;
+		border-radius: .2em .2em 0 0;
 		background: linear-gradient(
 			rgba(255, 255, 255, 0.3),
 			rgba(255, 255, 255, 0.3)

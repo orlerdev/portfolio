@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 import { media } from '../styles/utils.js';
-import MobileMenu from '../components/MobileMenu.jsx';
+import MobileMenu from './MobileMenu.jsx';
 
 const Nav = styled.nav`
   position: fixed;
@@ -9,14 +9,14 @@ const Nav = styled.nav`
   left: 0;
   display: flex;
   align-items: center;
-  font-size: 2em;
   width: 100%;
-  height: 80px;
-  padding: 10px 20px 0 20px;
-  background: rgba(255,255,255,.2);
+  height: 50px;
+  padding: 20px;
+  background: rgba(255, 255, 255, .2);
   backdrop-filter: blur(20px);
   border: none;
   outline: none;
+  z-index: 5;
   transition: all ease .4s;
 
   ${media.small`
@@ -25,12 +25,16 @@ const Nav = styled.nav`
     transform: translateX(-50%);
     align-items:center;
   `}
+
+  ${media.xs`
+    height:50px;
+  `}
 `;
 
 const Menu = styled.ul`
   display: flex;
-  column-gap: 10px;  
-  
+  font-size: 1.8em;
+
   ${media.xs`
     display:none;
   `}
@@ -39,7 +43,7 @@ const Menu = styled.ul`
 const Item = styled(NavLink)`
   padding: 5px 10px;
   transition: all ease-out .3s;
-  flex:1 1 auto;
+  flex: 1 1 auto;
 
   &:hover {
     background: rgba(255, 255, 255, .2);
@@ -48,21 +52,21 @@ const Item = styled(NavLink)`
   }
 `;
 
-
+const Span = styled.span`
+  transform: translateY(10%);
+`;
 
 const Navbar = () => {
-
   return (
     <Nav>
       <MobileMenu />
       <Menu>
-        <Item to="/">Home</Item>
-        <span>|</span>
-        <Item to="/about">About</Item>
-        <span>|</span>
-        <Item to="/projects">Projects</Item>
+            <Item to="/">Home</Item>
+            <Span>|</Span>
+            <Item to="/about">About</Item>
+            <Span>|</Span>
+            <Item to="/projects">Projects</Item>
       </Menu>
-
     </Nav>
   );
 };

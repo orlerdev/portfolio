@@ -16,8 +16,8 @@ const Entry = styled.div`
   justify-content:space-between;
   background: rgba(44,44,44,.2);
   padding:10px 0 10px 10px;
-  border-radius:1em;
-  
+  width:100%;
+  border-radius:1em;  
   
   ${media.small`
     flex-direction:column;
@@ -31,19 +31,33 @@ const TextWrapper = styled.div`
   display:flex;
   flex-direction:column;
   row-gap:20px;
-  max-width:50%;
+  width:60%;
+  padding:20px;
   
   ${media.small`
-    max-width:100%;
+    width:100%;
   `}
 `;
 
 const Title = styled.h2`
   text-align: center;
+  font-size:3.5rem;
+  font-weight:700;
+  
+  ${media.xl`
+    font-size:2rem;
+  `}
 `;
 
 const AboutBody = styled.ul`
+  font-size: 2.5rem;
+  display:flex;
+  flex-direction:column;
+  row-gap:10px;
   
+  ${media.xl`
+    font-size:unset;
+  `}
   
   li{
     padding-left: 1.5em;
@@ -53,26 +67,31 @@ const AboutBody = styled.ul`
   li::before{
     content: '- ';
   }
+  
+  
 `;
 
 const Photo = styled.img`
-  max-width: 30%;
+  max-width: 35%;
   max-height:100%;
+  width:35%;
+  height:auto;
   aspect-ratio:auto;
   object-fit: contain;
   border-radius:1em;
   
   ${media.small`
     max-width:100%;
+    width:100%;
   `}
 `;
 
 const About = () => {
-  const photo1 = usePhoto('navy2.png');
-  const photo2 = usePhoto('navy9.png');
-  const photo3 = usePhoto('navy6.png');
-  const photo4 = usePhoto('navy4.png');
-  const familyPhoto = usePhoto('familyPhoto.png')
+  const photo1 = usePhoto('navy2.webp');
+  const photo2 = usePhoto('navy9.webp');
+  const photo3 = usePhoto('navy6.webp');
+  const photo4 = usePhoto('navy4.webp');
+  const familyPhoto = usePhoto('familyPhoto.webp')
   return (
     <DefaultLayout>
       <Entries>
@@ -88,7 +107,7 @@ const About = () => {
         </Entry>
         <Entry>
           <TextWrapper>
-          <Title>&quot;2007-2012: USS Carl Vinson(CVN70)&quot;</Title>
+          <Title>2007-2012: USS Carl Vinson(CVN70)</Title>
             <AboutBody>
               <li>Proactively conducted 100 critical repairs and system overhauls resulting in a savings in excess of $30,000.00</li>
               <li>Qualified Enlisted Surface Warfare Specialist</li>
@@ -98,7 +117,7 @@ const About = () => {
         </Entry>
         <Entry>
           <TextWrapper>
-          <Title>&quot;2012-2015: Recruit Training Command(RTC)&quot;</Title>
+          <Title>2012-2015: Recruit Training Command(RTC)</Title>
             <AboutBody>
               <li>Reviewed and corrected curriculum deficiencies, ensuring that the most up-to-date information was being provided to the Navy</li>
               <li>Provided high-risk training to 78,000 Naval recruits, with zero safety mishaps, and a passing rate of 100%</li>
@@ -109,7 +128,7 @@ const About = () => {
         </Entry>
         <Entry>
           <TextWrapper>
-          <Title>&quot;2015-2020: USS Michael Monsoor(DDG1001)&quot;</Title>
+          <Title>2015-2020: USS Michael Monsoor(DDG1001)</Title>
             <AboutBody>
               <li>Essential in the creation of unique ZUMWALT damage control doctrine</li>
               <li>Delivered 300+ hours of dynamic damage control training and assessed 100+ casualty scenarios, resulting in a fully qualified crew</li>
@@ -119,7 +138,7 @@ const About = () => {
         </Entry>
         <Entry>
           <TextWrapper>
-          <Title>&quot;2020-2022: HSM-41 Seahawks&quot;</Title>
+          <Title>2020-2022: HSM-41 Seahawks</Title>
             <AboutBody>
               <li>Responsible for supervising 120 personnel in the maintenance and upkeep of all squadron working spaces, establishing a structured and safe environment</li>
               <li>Personnel onboarding manager and Leading Petty Officer. Implemented a comprehensive overhaul of unreliable standards and procedures, leading to an 80% reduction in administrative delinquencies.</li>

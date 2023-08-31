@@ -4,7 +4,7 @@ const theme = {
     small: '768px',
     medium: '1024px',
     large: '1200px',
-    xl: '1400px'
+    xl: '1440px'
   }
 }
 export default theme;

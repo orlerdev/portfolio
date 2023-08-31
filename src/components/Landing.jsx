@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { useHover } from '../context/HoverContext';
-import Avatar from './Avatar.jsx';
 
 const LandingContainer = styled.div`
   position: relative;
@@ -15,7 +14,7 @@ const LandingContainer = styled.div`
   border-radius: 1em;
   padding: 2em;
   margin-top: 100px;
-  
+
   h3 {
     font-size: 2.3rem;
     margin: 0;
@@ -24,7 +23,7 @@ const LandingContainer = styled.div`
 
 const LandingH2 = styled.h2`
   font-size: 4em;
-    margin: 0;
+  margin: 0;
 `;
 
 const LandingSpan = styled.span`
@@ -39,7 +38,12 @@ const IntroWrapper = styled.div`
   align-items: center;
   font-size: 4.5rem;
   column-gap: 1rem;
-  margin-bottom:8rem;
+`;
+
+const AvatarTextWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Landing = () => {
@@ -55,7 +59,6 @@ const Landing = () => {
 
   return (
     <LandingContainer>
-      <Avatar />
       <LandingH2>{`Hi!`}</LandingH2>
       <IntroWrapper>
         <LandingSpan>{`I'm`}</LandingSpan>
@@ -64,9 +67,11 @@ const Landing = () => {
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}>{`Jared`}</LandingSpan>
       </IntroWrapper>
-      <h3>
-        Full Stack Software Developer <br /> and US Navy Veteran
-      </h3>
+      <AvatarTextWrapper>
+        <h3>
+          Full Stack Software Developer <br /> and US Navy Veteran
+        </h3>
+      </AvatarTextWrapper>
     </LandingContainer>
   );
 };

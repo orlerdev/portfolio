@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   display:inline-block;
   background:rgba(44,44,44,.2);
   border-radius:1em;
+  width: 70vw;
 `;
 
 const Container = styled.div`

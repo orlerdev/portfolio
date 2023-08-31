@@ -7,9 +7,15 @@ import { media } from '../styles/utils.js';
 import { HoverProvider } from '../context/HoverContext';
 
 const PageWrapper = styled.div`
-	height: calc(100vh - 100px);
+	//height: calc(100vh - 100px);
+	height: 100vh;
   display: flex;
 	flex-direction: column;
+	margin-top:80px;
+	
+	${media.xs`
+		margin-top:50px;
+	`}
 `;
 
 const GlowingEffect = styled.div`
@@ -55,9 +61,13 @@ const PageContainer = styled.div`
 `;
 const PageRow = styled.div`
 	display: flex;
-	max-width:1100px;	
+	//max-width:1100px;	
 	justify-content: center;
 	padding:20px;
+	
+	${media.xl`
+		max-width:1100px;
+	`}
 	
 	${media.xs`
 		padding:0;
@@ -70,7 +80,7 @@ const PageColumn = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-	padding-top:120px;
+	//padding-top:120px;
 `;
 
 const DefaultLayout = ({ children }) => {

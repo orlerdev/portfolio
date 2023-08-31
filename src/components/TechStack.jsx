@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 const StackWrapper = styled.div`
   display:flex;
-  height:100%;
-  width:fit-content;
+  height:fit-content;
+  width:70vw;
   gap:20px;
   flex-wrap:wrap;
   align-items: flex-start;

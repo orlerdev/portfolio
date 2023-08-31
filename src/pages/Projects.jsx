@@ -4,10 +4,13 @@ import DNDB from '../assets/DNDB.png';
 
 
 const ProjectsWrapper = styled.div`
-  margin-top: 100px;
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  height:100vh;
+  row-gap:10px;
+  padding:10px;
 `;
-const MainTitle = styled.h1``;
-const ProjectContainer = styled.div``;
 const ProjectTitle = styled.h2``;
 const ProjectPhoto = styled.img`
   width:100%;
@@ -18,11 +21,8 @@ const Projects = () => {
   return (
     <DefaultLayout>
       <ProjectsWrapper>
-        <MainTitle>Projects</MainTitle>
-        <ProjectContainer>
           <ProjectTitle>Dungeons & Dust Bunnies</ProjectTitle>
           <a href='https://dndb.me' target='_blank' rel="noreferrer"><ProjectPhoto src={DNDB} alt='Dungeons and Dust Bunnies home page photo' /></a>
-        </ProjectContainer>
       </ProjectsWrapper>
     </DefaultLayout>
   );
