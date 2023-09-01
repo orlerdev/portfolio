@@ -2,7 +2,6 @@ import DefaultLayout from '../layouts/DefaultLayout.jsx';
 import usePhoto from '../hooks/usePhoto.jsx';
 import styled from '@emotion/styled';
 import { media } from '../styles/utils.js';
-import PropTypes from 'prop-types';
 
 const Entries = styled.div`
   display:flex;
@@ -156,7 +155,3 @@ const About = () => {
 };
 
 export default About;
-
-About.propTypes = {
-  imageUrl: PropTypes.string.isRequired
-};

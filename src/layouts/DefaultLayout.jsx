@@ -4,15 +4,15 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styled from '@emotion/styled';
 import { media } from '../styles/utils.js';
-import theme from '../styles/theme.js';
 import { HoverProvider } from '../context/HoverContext';
+import theme from '../styles/theme.js';
 
 const PageWrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
   margin-top: 80px;
-  background-color: ${props => props.theme.colors.light.backgroundColor};
+  background-color: ${props => props.theme.colors.backgroundColor};
 
   ${media.xs`
 		margin-top:50px;

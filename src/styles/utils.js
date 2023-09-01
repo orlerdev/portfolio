@@ -29,6 +29,7 @@ export const media = {
   `
 };
 
+
 // export const getMenuItems = (location) => {
 //   const isHomePage = location.pathname === '/';
 //   const isAboutPage = location.pathname === '/about';

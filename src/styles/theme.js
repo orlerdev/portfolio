@@ -22,15 +22,5 @@ const theme = {
       componentBackground: 'rgba(255,255,255,.2)'
     }
   },
-  zIndex: {
-    background: 0,
-    content: 1,
-    header: 2,
-    overlay: 3
-  },
-  boxShadow: {
-    plain: '0 0 3px 2px rgba(0,0,0,.5)'
-  },
-  mode: 'light'
 };
 export default theme;
