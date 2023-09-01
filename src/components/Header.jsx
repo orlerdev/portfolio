@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import { media } from '../styles/utils.js';
 import MobileMenu from './MobileMenu.jsx';
+import ThemeToggle from './ThemeToggle.jsx';
 
 const Nav = styled.nav`
   position: fixed;
@@ -67,6 +68,7 @@ const Navbar = () => {
             <Span>|</Span>
             <Item to="/projects">Projects</Item>
       </Menu>
+      <ThemeToggle />
     </Nav>
   );
 };

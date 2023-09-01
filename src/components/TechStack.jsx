@@ -1,17 +1,39 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
-const StackWrapper = styled.div`
-  display:flex;
-  height:fit-content;
-  width:70vw;
-  gap:20px;
-  flex-wrap:wrap;
+const TechWrapper = styled.div`
+  display: flex;
+  height: fit-content;
+  width: 70vw;
+  gap: 20px;
+  flex-wrap: wrap;
   align-items: flex-start;
+  justify-content:space-evenly;
+  background: rgba(44, 44, 44, 0.2);
+  border-radius: 1em;
+  padding: 2em;
 `;
+
+const TechContainer = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  row-gap:10px;
+  text-align: center;
+  font-weight:700;
+  width:125px;
+`;
+
+const TechTitle = styled.p`
+  width:100%;
+`;
+
 const TechIcon = styled.img`
-  width:100px;
-  height:100px;
+  width: 100px;
+  height: 100px;
+  border-radius:.5em;
+  background: rgba(255,255,255);
+  padding:5px;
 `;
 
 const techTitles = [
@@ -35,7 +57,7 @@ const techTitles = [
   'Spring',
   'Thymeleaf',
   'Vite'
-]
+];
 
 const TechStack = () => {
   const [imagePaths, setImagePaths] = useState([]);
@@ -53,11 +75,14 @@ const TechStack = () => {
   }, []);
 
   return (
-    <StackWrapper>
+    <TechWrapper>
       {imagePaths.map((path, index) => (
-        <TechIcon key={index} src={path} alt={`Image ${index}`} title={techTitles[index]} />
+        <TechContainer key={index}>
+          <TechIcon src={path} alt={`Image ${index}`} title={techTitles[index]} />
+          <TechTitle>{techTitles[index]}</TechTitle>
+        </TechContainer>
       ))}
-    </StackWrapper>
+    </TechWrapper>
   );
 };
 export default TechStack;

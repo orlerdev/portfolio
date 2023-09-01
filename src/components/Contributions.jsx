@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 import useGitHub from '../hooks/useGitHub.jsx';
+import Avatar from './Avatar.jsx';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
-  display:inline-block;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   background:rgba(44,44,44,.2);
   border-radius:1em;
   width: 70vw;
@@ -45,6 +48,7 @@ const Contributions = ({ username }) => {
       ) : (
         <p>No contributions data available</p>
       )}
+      <Avatar />
     </Wrapper>
   );
 };

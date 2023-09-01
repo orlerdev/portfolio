@@ -4,7 +4,6 @@ import DefaultLayout from '../layouts/DefaultLayout';
 import Landing from '../components/Landing';
 import TechStack from '../components/TechStack.jsx';
 import Contributions from '../components/Contributions.jsx';
-import Avatar from '../components/Avatar.jsx';
 
 const username = import.meta.env.VITE_USERNAME;
 
@@ -15,7 +14,7 @@ const HomeWrapper = styled.div`
 	align-items:center;
 	row-gap:40px;
 	padding: 0 40px;
-	height:100vh;
+	min-height:100vh;
 	overflow-x:hidden;
 	overflow-y:auto;
 	
@@ -39,7 +38,6 @@ const Home = () => {
 	return (
 			<DefaultLayout>
 				<HomeWrapper>
-					<Avatar />
 					<Landing/>
 					<Contributions username={username}/>
 					<TechStack />

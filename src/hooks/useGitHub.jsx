@@ -70,8 +70,6 @@ const fetchData = async () => {
       });
     });
 
-    console.log('Contributions data:', contributionsData);
-
     setContributionsData(contributionsData)
 
 

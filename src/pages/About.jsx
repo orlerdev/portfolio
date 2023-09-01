@@ -30,7 +30,8 @@ const Entry = styled.div`
 const TextWrapper = styled.div`
   display:flex;
   flex-direction:column;
-  row-gap:20px;
+  justify-content:center;
+  row-gap:40px;
   width:60%;
   padding:20px;
   
@@ -40,9 +41,12 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled.h2`
+  align-self:center;
   text-align: center;
-  font-size:3.5rem;
+  font-size:2.5rem;
   font-weight:700;
+  border-bottom: 1px solid;
+  width:fit-content;
   
   ${media.xl`
     font-size:2rem;
@@ -50,7 +54,7 @@ const Title = styled.h2`
 `;
 
 const AboutBody = styled.ul`
-  font-size: 2.5rem;
+  font-size: 1.2rem;
   display:flex;
   flex-direction:column;
   row-gap:10px;
