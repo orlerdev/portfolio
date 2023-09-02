@@ -34,6 +34,7 @@ const HomeWrapper = styled.div`
 `;
 
 const Home = () => {
+	console.log(username);
 	return (
 			<DefaultLayout>
 				<HomeWrapper>
