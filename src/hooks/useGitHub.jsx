@@ -31,56 +31,62 @@ const useGitHub = (username) => {
       Authorization: `Bearer ${token}`
     };
 
+    const fetchData = async () => {
+      try {
+        const res = await axios.post('https://api.github.com/graphql', { query, variables: { username } }, { headers });
+        const weeks = res.data.data.user.contributionsCollection.contributionCalendar.weeks;
 
-const fetchData = async () => {
-  try {
-    const res = await axios.post('https://api.github.com/graphql', { query, variables: {username} }, { headers });
-    const weeks = res.data.data.user.contributionsCollection.contributionCalendar.weeks;
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth();
 
-    const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth();
+        let last3MonthsMonth = currentMonth - 2;
+        let last3MonthsYear = currentYear;
 
-    const last3Months = new Date(currentYear, currentMonth - 2);
-    const last6Months = new Date(currentYear, currentMonth - 5);
-    const lastYear = new Date(currentYear - 1, currentMonth);
+        if (last3MonthsMonth < 0) {
+          last3MonthsMonth += 12;
+          last3MonthsYear -= 1;
+        }
 
-    const contributionsData = {
-      currentMonth: 0,
-      last3Months: 0,
-      last6Months: 0,
-      lastYear: 0,
-    };
+        const last3Months = new Date(last3MonthsMonth, last3MonthsYear);
+        const last6Months = new Date(currentYear, currentMonth - 5);
+        const lastYear = new Date(currentYear - 1, currentMonth);
 
-    weeks.forEach(week => {
-      week.contributionDays.forEach(day => {
-        const date = new Date(day.date);
-        if (date >= lastYear) {
-          contributionsData.lastYear += day.contributionCount;
-          if (date >= last6Months) {
-            contributionsData.last6Months += day.contributionCount;
-            if (date >= last3Months) {
-              contributionsData.last3Months += day.contributionCount;
-              if (date >= currentMonth) {
-                contributionsData.currentMonth += day.contributionCount;
+        const contributionsData = {
+          currentMonth: 0,
+          last3Months: 0,
+          last6Months: 0,
+          lastYear: 0
+        };
+
+        weeks.forEach(week => {
+          week.contributionDays.forEach(day => {
+            const date = new Date(day.date);
+            if (date >= lastYear) {
+              contributionsData.lastYear += day.contributionCount;
+              if (date >= last6Months) {
+                contributionsData.last6Months += day.contributionCount;
+                if (date >= last3Months) {
+                  contributionsData.last3Months += day.contributionCount;
+                  if (date >= currentMonth) {
+                    contributionsData.currentMonth += day.contributionCount;
+                  }
+                }
               }
             }
-          }
-        }
-      });
-    });
+          });
+        });
 
-    setContributionsData(contributionsData)
+        setContributionsData(contributionsData);
 
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
 
-    setLoading(false);
-  } catch (error) {
-    setError(error);
-    setLoading(false);
-  }
-};
-
-fetchData();
+    fetchData();
 
   }, [username]);
 

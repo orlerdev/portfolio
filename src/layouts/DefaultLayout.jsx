@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import { HoverProvider } from '../context/HoverContext';
+import { media } from '../styles/utils.js';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styled from '@emotion/styled';
-import { media } from '../styles/utils.js';
-import { HoverProvider } from '../context/HoverContext';
-import theme from '../styles/theme.js';
+import PropTypes from 'prop-types';
+import DC3 from '../assets/DC3.jpg';
 
 const PageWrapper = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
-  background-color: ${props => props.theme.colors.backgroundColor};
-
-  ${media.xs`
-		margin-top:50px;
-	`}
+  padding-top: 50px;
+  background: url(${DC3});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
 `;
 
 const GlowingEffect = styled.div`
@@ -27,10 +26,10 @@ const GlowingEffect = styled.div`
   height: 80%;
   pointer-events: none;
   background: radial-gradient(circle,
-  rgba(255, 255, 255, 0.8) 1%,
+  rgba(255, 255, 255, .7) 1%,
   transparent 40%);
   transform: translate(-50%, -50%);
-  opacity: 0;
+  opacity: 1;
 
   &.active {
     animation: glow 10s ease-out infinite;
@@ -47,9 +46,7 @@ const GlowingEffect = styled.div`
     }
   }
 
-  ${media.small`
-		display:none;
-	`}
+  ${media.small`display:none;`}
 
 `;
 
@@ -64,13 +61,9 @@ const PageRow = styled.div`
   justify-content: center;
   padding: 20px;
 
-  ${media.xl`
-		max-width:1100px;
-	`}
+  ${media.xl`max-width:1100px;`}
 
-  ${media.xs`
-		padding:0;
-	`}
+  ${media.xs`padding:0;`}
 
 `;
 const PageColumn = styled.div`

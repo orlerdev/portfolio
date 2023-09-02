@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import DefaultLayout from '../layouts/DefaultLayout.jsx';
 import DNDB from '../assets/DNDB.png';
 
@@ -10,8 +10,13 @@ const ProjectsWrapper = styled.div`
   height:100vh;
   row-gap:10px;
   padding:10px;
+  background: ${props => props.theme.colors.lightTheme.frosted};
+  color: ${props => props.theme.colors.lightTheme.altText};
 `;
-const ProjectTitle = styled.h2``;
+const ProjectTitle = styled.h2`
+  align-self: center;
+  font-size: 3em;
+`;
 const ProjectPhoto = styled.img`
   width:100%;
   height:auto;

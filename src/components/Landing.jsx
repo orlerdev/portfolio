@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { useHover } from '../context/HoverContext';
 
 const LandingContainer = styled.div`
@@ -10,10 +10,12 @@ const LandingContainer = styled.div`
   text-align: center;
   width: 70vw;
   height: fit-content;
-  background: rgba(44, 44, 44, 0.2);
+  background: ${props => props.theme.colors.lightTheme.frosted};
+  color: ${props => props.theme.colors.lightTheme.altText};
+  backdrop-filter: blur(20px);
   border-radius: 1em;
   padding: 2em;
-  margin-top: 100px;
+  box-shadow: ${props => props.theme.colors.lightTheme.secondary} inset 0 0 6px 3px;
 
   h3 {
     font-size: 2.3rem;
@@ -22,7 +24,7 @@ const LandingContainer = styled.div`
 `;
 
 const LandingH2 = styled.h2`
-  font-size: 4em;
+  font-size: 5em;
   margin: 0;
 `;
 

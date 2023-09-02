@@ -7,20 +7,22 @@ const theme = {
     xl: '1440px'
   },
   colors: {
-    light: {
-      primary: '#fff',
-      secondary: '#777',
-      accent: '#a9c42c',
-      backgroundColor: '#5AB9EA',
-      backgroundImage: 'linear-gradient(43deg, #5AB9EA 0%, #5680E9 46%, #8860D0 100%)'
+    lightTheme: {
+      primary: '#5E9596',
+      secondary: '#AB6145',
+      accent: '#D4916A',
+      background: '#5E9596',
+      frosted: 'rgba(94,149,152,0.7)',
+      text: '#2d5659',
+      altText: '#fff'
     },
-    dark: {
-      primary: '#000',
-      secondary: '#000',
-      accent: '#000',
-      background: '#000',
-      componentBackground: 'rgba(255,255,255,.2)'
+    darkTheme: {
+      primary: '#5E9596',
+      secondary: '#AB6145',
+      accent: '#D4916A',
+      background: '#1D3334',
+      text: '#8FCBCA'
     }
-  },
+  }
 };
 export default theme;

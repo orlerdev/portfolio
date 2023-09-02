@@ -10,7 +10,6 @@ const username = import.meta.env.VITE_USERNAME;
 const HomeWrapper = styled.div`
 	display:flex;
 	flex-direction:column;
-	//justify-content: center;
 	align-items:center;
 	row-gap:40px;
 	padding: 0 40px;

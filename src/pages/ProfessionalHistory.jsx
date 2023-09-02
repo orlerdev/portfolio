@@ -1,4 +1,4 @@
-// import styled from "styled-components";
+// import styled from '@emotion/styled';
 // import TimelineEntry from "../components/TimelineEntry.jsx";
 // import DefaultLayout from "../layouts/DefaultLayout.jsx";
 // import usePhoto from '../hooks/usePhoto.jsx';

@@ -13,15 +13,19 @@ const Entries = styled.div`
 const Entry = styled.div`
   display:flex;
   justify-content:space-between;
-  background: rgba(44,44,44,.2);
-  padding:10px 0 10px 10px;
-  width:100%;
+  background: ${props => props.theme.colors.lightTheme.frosted};
+  backdrop-filter: blur(20px);
+  color: ${props => props.theme.colors.lightTheme.altText};
+  padding-left:10px;
+  width:90%;
   border-radius:1em;  
   
   ${media.small`
     flex-direction:column;
     row-gap:40px;
     align-items:center;
+    width:100%;
+    padding:unset;
   `}
   
 `;
@@ -29,7 +33,7 @@ const Entry = styled.div`
 const TextWrapper = styled.div`
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   row-gap:40px;
   width:60%;
   padding:20px;
@@ -42,24 +46,24 @@ const TextWrapper = styled.div`
 const Title = styled.h2`
   align-self:center;
   text-align: center;
-  font-size:2.5rem;
+  font-size:4rem;
   font-weight:700;
   border-bottom: 1px solid;
   width:fit-content;
   
   ${media.xl`
-    font-size:2rem;
+    font-size:2.5rem;
   `}
 `;
 
 const AboutBody = styled.ul`
-  font-size: 1.2rem;
+  font-size: 2rem;
   display:flex;
   flex-direction:column;
   row-gap:10px;
   
   ${media.xl`
-    font-size:unset;
+    font-size:1.5rem;
   `}
   
   li{
@@ -86,6 +90,7 @@ const Photo = styled.img`
   ${media.small`
     max-width:100%;
     width:100%;
+    border-radius:unset;
   `}
 `;
 

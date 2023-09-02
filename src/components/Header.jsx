@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import { media } from '../styles/utils.js';
 import MobileMenu from './MobileMenu.jsx';
-import ThemeToggle from './ThemeToggle.jsx';
 
 const Nav = styled.nav`
   position: fixed;
@@ -13,7 +12,7 @@ const Nav = styled.nav`
   width: 100%;
   height: 50px;
   padding: 20px;
-  background: rgba(255, 255, 255, .2);
+  background: ${props => props.theme.colors.lightTheme.frosted};
   backdrop-filter: blur(20px);
   border: none;
   outline: none;
@@ -35,6 +34,7 @@ const Nav = styled.nav`
 const Menu = styled.ul`
   display: flex;
   font-size: 1.8em;
+  color: ${props => props.theme.colors.lightTheme.altText};
 
   ${media.xs`
     display:none;
@@ -47,7 +47,7 @@ const Item = styled(NavLink)`
   flex: 1 1 auto;
 
   &:hover {
-    background: rgba(255, 255, 255, .2);
+    background: ${props => props.theme.colors.lightTheme.secondary};
     border-radius: .2em;
     font-weight: bold;
   }
@@ -68,7 +68,6 @@ const Navbar = () => {
             <Span>|</Span>
             <Item to="/projects">Projects</Item>
       </Menu>
-      <ThemeToggle />
     </Nav>
   );
 };

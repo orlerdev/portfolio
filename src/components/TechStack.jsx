@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 
 const TechWrapper = styled.div`
@@ -9,7 +9,10 @@ const TechWrapper = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content:space-evenly;
-  background: rgba(44, 44, 44, 0.2);
+  background: ${props => props.theme.colors.lightTheme.frosted};
+  color: ${props => props.theme.colors.lightTheme.altText};
+  box-shadow: ${props => props.theme.colors.lightTheme.secondary} inset 0 0 6px 3px;
+  backdrop-filter: blur(20px);
   border-radius: 1em;
   padding: 2em;
 `;
@@ -34,6 +37,7 @@ const TechIcon = styled.img`
   border-radius:.5em;
   background: rgba(255,255,255);
   padding:5px;
+  border-bottom: 3px solid ${props => props.theme.colors.lightTheme.secondary};
 `;
 
 const techTitles = [
