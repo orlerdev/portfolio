@@ -8,9 +8,12 @@ const FooterWrapper = styled.footer`
   min-width: 100%;
   height: 80px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 0 40px;
   margin-top: 20px;
+
+  ${media.small`
+  `}
 `;
 
 const Menu = styled.ul`
@@ -20,6 +23,8 @@ const Menu = styled.ul`
   font-size: 2em;
   column-gap: 40px;
   color: #fff;
+  
+  
 `;
 
 const Item = styled.li`

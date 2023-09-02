@@ -1,6 +1,5 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { useHover } from '../context/HoverContext';
-import Avatar from './Avatar.jsx';
 
 const LandingContainer = styled.div`
   position: relative;
@@ -11,11 +10,13 @@ const LandingContainer = styled.div`
   text-align: center;
   width: 70vw;
   height: fit-content;
-  background: rgba(44, 44, 44, 0.2);
+  background: ${props => props.theme.colors.lightTheme.frosted};
+  color: ${props => props.theme.colors.lightTheme.altText};
+  backdrop-filter: blur(20px);
   border-radius: 1em;
   padding: 2em;
-  margin-top: 100px;
-  
+  box-shadow: ${props => props.theme.colors.lightTheme.secondary} inset 0 0 6px 3px;
+
   h3 {
     font-size: 2.3rem;
     margin: 0;
@@ -23,8 +24,8 @@ const LandingContainer = styled.div`
 `;
 
 const LandingH2 = styled.h2`
-  font-size: 4em;
-    margin: 0;
+  font-size: 5em;
+  margin: 0;
 `;
 
 const LandingSpan = styled.span`
@@ -39,7 +40,12 @@ const IntroWrapper = styled.div`
   align-items: center;
   font-size: 4.5rem;
   column-gap: 1rem;
-  margin-bottom:8rem;
+`;
+
+const AvatarTextWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Landing = () => {
@@ -55,7 +61,6 @@ const Landing = () => {
 
   return (
     <LandingContainer>
-      <Avatar />
       <LandingH2>{`Hi!`}</LandingH2>
       <IntroWrapper>
         <LandingSpan>{`I'm`}</LandingSpan>
@@ -64,9 +69,11 @@ const Landing = () => {
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}>{`Jared`}</LandingSpan>
       </IntroWrapper>
-      <h3>
-        Full Stack Software Developer <br /> and US Navy Veteran
-      </h3>
+      <AvatarTextWrapper>
+        <h3>
+          Full Stack Software Developer <br /> and US Navy Veteran
+        </h3>
+      </AvatarTextWrapper>
     </LandingContainer>
   );
 };

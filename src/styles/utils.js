@@ -28,3 +28,38 @@ export const media = {
     }
   `
 };
+
+
+// export const getMenuItems = (location) => {
+//   const isHomePage = location.pathname === '/';
+//   const isAboutPage = location.pathname === '/about';
+//   const isProjectsPage = location.pathname === '/projects';
+//
+//   if (isHomePage) {
+//     return (
+//       <>
+//         <Item to="/about">About</Item>
+//         <span>|</span>
+//         <Item to="/projects">Projects</Item>
+//       </>
+//     );
+//   }
+//   if (isAboutPage) {
+//     return (
+//       <>
+//         <Item to="/">Home</Item>
+//         <span>|</span>
+//         <Item to="/projects">Projects</Item>
+//       </>
+//     );
+//   }
+//   if (isProjectsPage) {
+//     return (
+//       <>
+//         <Item to="/">Home</Item>
+//         <span>|</span>
+//         <Item to="/about">About</Item>
+//       </>
+//     );
+//   }
+// };

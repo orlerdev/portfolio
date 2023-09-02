@@ -10,12 +10,16 @@ const username = import.meta.env.VITE_USERNAME;
 const HomeWrapper = styled.div`
 	display:flex;
 	flex-direction:column;
-	justify-content: center;
+	align-items:center;
 	row-gap:40px;
 	padding: 0 40px;
 	min-height:100vh;
 	overflow-x:hidden;
 	overflow-y:auto;
+	
+	${media.xl`
+		align-items:unset;
+	`}
 	
 	${media.medium`
 		padding: 30px;
@@ -30,6 +34,7 @@ const HomeWrapper = styled.div`
 `;
 
 const Home = () => {
+	console.log(username);
 	return (
 			<DefaultLayout>
 				<HomeWrapper>
