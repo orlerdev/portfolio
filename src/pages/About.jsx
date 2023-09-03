@@ -13,12 +13,15 @@ const Entries = styled.div`
 const Entry = styled.div`
   display:flex;
   justify-content:space-between;
+  width: 70vw;
   background: ${props => props.theme.colors.lightTheme.frosted};
+  background-image: ${props => props.theme.colors.lightTheme.backgroundImage};
+  background-blend-mode: overlay;
+  box-shadow: ${props => props.theme.colors.lightTheme.boxShadow};
   backdrop-filter: blur(20px);
+  border-radius:1em;
+  padding-left:20px;
   color: ${props => props.theme.colors.lightTheme.altText};
-  padding-left:10px;
-  width:90%;
-  border-radius:1em;  
   
   ${media.small`
     flex-direction:column;
@@ -97,7 +100,7 @@ const Photo = styled.img`
 const About = () => {
   const photo1 = usePhoto('navy2.webp');
   const photo2 = usePhoto('navy9.webp');
-  const photo3 = usePhoto('navy6.webp');
+  const photo3 = usePhoto('navy7.webp');
   const photo4 = usePhoto('navy4.webp');
   const familyPhoto = usePhoto('familyPhoto.webp')
   return (

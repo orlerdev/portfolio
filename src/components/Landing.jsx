@@ -8,14 +8,16 @@ const LandingContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 70vw;
   height: fit-content;
+  width: 70vw;
   background: ${props => props.theme.colors.lightTheme.frosted};
-  color: ${props => props.theme.colors.lightTheme.altText};
+  background-image: ${props => props.theme.colors.lightTheme.backgroundImage};
+  background-blend-mode: overlay;
+  box-shadow: ${props => props.theme.colors.lightTheme.boxShadow};
   backdrop-filter: blur(20px);
-  border-radius: 1em;
-  padding: 2em;
-  box-shadow: ${props => props.theme.colors.lightTheme.secondary} inset 0 0 6px 3px;
+  border-radius:1em;
+  padding: 0 5px 5px 20px;
+  color: ${props => props.theme.colors.lightTheme.altText};
 
   h3 {
     font-size: 2.3rem;

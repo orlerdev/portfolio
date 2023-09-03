@@ -5,9 +5,8 @@ import headshot from '../assets/Headshot.png';
 const AvatarWrapper = styled.div`
 	position:relative;
 	max-height:100%;
-	max-width: 25%;
-	height: 100%;
-	width: auto;
+	width: 250px;
+	aspect-ratio: auto;
 	background: none;
 	filter: ${({ isHovered }) => (isHovered ? 'brightness(110%)' : 'none')};
 	//transform: ${({ isHovered }) => (isHovered ? 'none' : 'translate(-20%, 0)')};

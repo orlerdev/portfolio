@@ -4,17 +4,19 @@ import { useEffect, useState } from 'react';
 const TechWrapper = styled.div`
   display: flex;
   height: fit-content;
-  width: 70vw;
   gap: 20px;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   background: ${props => props.theme.colors.lightTheme.frosted};
-  color: ${props => props.theme.colors.lightTheme.altText};
-  box-shadow: ${props => props.theme.colors.lightTheme.secondary} inset 0 0 6px 3px;
+  background-image: ${props => props.theme.colors.lightTheme.backgroundImage};
+  background-blend-mode: overlay;
+  box-shadow: ${props => props.theme.colors.lightTheme.boxShadow};
   backdrop-filter: blur(20px);
   border-radius: 1em;
   padding: 2em;
+  color: ${props => props.theme.colors.lightTheme.altText};
+  width: 70vw;
 `;
 
 const TechContainer = styled.div`
@@ -37,7 +39,6 @@ const TechIcon = styled.img`
   border-radius:.5em;
   background: rgba(255,255,255);
   padding:5px;
-  border-bottom: 3px solid ${props => props.theme.colors.lightTheme.secondary};
 `;
 
 const techTitles = [

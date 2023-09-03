@@ -12,10 +12,9 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 50px;
-  background: url(${DC3});
+  background: url(${DC3}) no-repeat fixed top;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
+  font-family: ${props => props.theme.fonts.fontFamily};
 `;
 
 const GlowingEffect = styled.div`

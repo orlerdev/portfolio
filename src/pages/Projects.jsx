@@ -12,6 +12,8 @@ const ProjectsWrapper = styled.div`
   padding:10px;
   background: ${props => props.theme.colors.lightTheme.frosted};
   color: ${props => props.theme.colors.lightTheme.altText};
+  box-shadow: ${props => props.theme.colors.lightTheme.boxShadow};
+  border-radius: 1em;
 `;
 const ProjectTitle = styled.h2`
   align-self: center;
@@ -20,6 +22,7 @@ const ProjectTitle = styled.h2`
 const ProjectPhoto = styled.img`
   width:100%;
   height:auto;
+  border-radius: 1em;
 `;
 
 const Projects = () => {

@@ -8,19 +8,22 @@ const Wrapper = styled.div`
   justify-content:space-between;
   align-items:center;
   background: ${props => props.theme.colors.lightTheme.frosted};
-  box-shadow: ${props => props.theme.colors.lightTheme.secondary} inset 0 0 6px 3px;
+  background-image: ${props => props.theme.colors.lightTheme.backgroundImage};
+  background-blend-mode: overlay;
+  //box-shadow: ${props => props.theme.colors.lightTheme.secondary} inset 0 0 6px 3px;
+  box-shadow: ${props => props.theme.colors.lightTheme.boxShadow};
   backdrop-filter: blur(20px);
   border-radius:1em;
+  padding-left: 20px;
+  color: ${props => props.theme.colors.lightTheme.altText};
   width: 70vw;
   font-size: 1.5rem;
-  color: ${props => props.theme.colors.lightTheme.altText};
 `;
 
 const Container = styled.div`
   display: flex;
   flex-direction:column;
   row-gap: 10px;
-  padding: calc(2rem + 5px);
 `;
 
 const Span = styled.span`
@@ -43,7 +46,7 @@ const Contributions = ({ username }) => {
     <Wrapper>
       {contributionsData ? (
         <Container>
-          <h2>My GitHub Contributions:</h2>
+          <h2>GitHub Stats:</h2>
           <Span>This Month: <strong>{contributionsData.currentMonth}</strong></Span>
           <Span>The Past 3 Months: <strong>{contributionsData.last3Months}</strong></Span>
           <Span>The Past 6 Months: <strong>{contributionsData.last6Months}</strong></Span>

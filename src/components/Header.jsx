@@ -49,7 +49,6 @@ const Item = styled(NavLink)`
   &:hover {
     background: ${props => props.theme.colors.lightTheme.secondary};
     border-radius: .2em;
-    font-weight: bold;
   }
 `;
 
