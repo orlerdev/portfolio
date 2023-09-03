@@ -1,29 +1,26 @@
-import { useHover } from '../context/HoverContext';
 import styled from '@emotion/styled';
 import headshot from '../assets/Headshot.png';
 
 const AvatarWrapper = styled.div`
 	position:relative;
-	max-height:100%;
-	width: 250px;
-	aspect-ratio: auto;
-	background: none;
-	filter: ${({ isHovered }) => (isHovered ? 'brightness(110%)' : 'none')};
-	//transform: ${({ isHovered }) => (isHovered ? 'none' : 'translate(-20%, 0)')};
+	width: auto;
+	height: 50vh;
+	border-radius: 50%;
+	background: ${props => props.theme.colors.frosted};
+	border: .5rem solid ${props => props.theme.colors.primary};
+	overflow:hidden;
 `;
 
 const AvatarImage = styled.img`
-	height: 100%;
-	width: 100%;
-	border-radius:  0 0 1em 1em;
+	height:100%;
+	width:100%;
+	aspect-ratio:auto;
 `;
 
 const Avatar = () => {
-	const { $isHovered } = useHover();
-
 	return (
 		<>
-			<AvatarWrapper isHovered={$isHovered}>
+			<AvatarWrapper>
 				<AvatarImage src={headshot} alt="Headshot" />
 			</AvatarWrapper>
 		</>

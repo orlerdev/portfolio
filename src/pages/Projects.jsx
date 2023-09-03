@@ -10,9 +10,9 @@ const ProjectsWrapper = styled.div`
   height:100vh;
   row-gap:10px;
   padding:10px;
-  background: ${props => props.theme.colors.lightTheme.frosted};
-  color: ${props => props.theme.colors.lightTheme.altText};
-  box-shadow: ${props => props.theme.colors.lightTheme.boxShadow};
+  background: ${props => props.theme.colors.frosted};
+  color: ${props => props.theme.colors.altText};
+  box-shadow: ${props => props.theme.colors.boxShadow};
   border-radius: 1em;
 `;
 const ProjectTitle = styled.h2`

@@ -12,7 +12,7 @@ const Nav = styled.nav`
   width: 100%;
   height: 50px;
   padding: 20px;
-  background: ${props => props.theme.colors.lightTheme.frosted};
+  background: ${props => props.theme.colors.frosted};
   backdrop-filter: blur(20px);
   border: none;
   outline: none;
@@ -34,7 +34,7 @@ const Nav = styled.nav`
 const Menu = styled.ul`
   display: flex;
   font-size: 1.8em;
-  color: ${props => props.theme.colors.lightTheme.altText};
+  color: ${props => props.theme.colors.altText};
 
   ${media.xs`
     display:none;
@@ -47,7 +47,7 @@ const Item = styled(NavLink)`
   flex: 1 1 auto;
 
   &:hover {
-    background: ${props => props.theme.colors.lightTheme.secondary};
+    background: ${props => props.theme.colors.secondary};
     border-radius: .2em;
   }
 `;

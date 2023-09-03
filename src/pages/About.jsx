@@ -14,14 +14,14 @@ const Entry = styled.div`
   display:flex;
   justify-content:space-between;
   width: 70vw;
-  background: ${props => props.theme.colors.lightTheme.frosted};
-  background-image: ${props => props.theme.colors.lightTheme.backgroundImage};
+  background: ${props => props.theme.colors.frosted};
+  background-image: ${props => props.theme.colors.backgroundImage};
   background-blend-mode: overlay;
-  box-shadow: ${props => props.theme.colors.lightTheme.boxShadow};
+  box-shadow: ${props => props.theme.colors.boxShadow};
   backdrop-filter: blur(20px);
   border-radius:1em;
   padding-left:20px;
-  color: ${props => props.theme.colors.lightTheme.altText};
+  color: ${props => props.theme.colors.altText};
   
   ${media.small`
     flex-direction:column;

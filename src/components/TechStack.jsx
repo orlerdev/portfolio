@@ -8,14 +8,14 @@ const TechWrapper = styled.div`
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-evenly;
-  background: ${props => props.theme.colors.lightTheme.frosted};
-  background-image: ${props => props.theme.colors.lightTheme.backgroundImage};
+  background: ${props => props.theme.colors.frosted};
+  background-image: ${props => props.theme.colors.backgroundImage};
   background-blend-mode: overlay;
-  box-shadow: ${props => props.theme.colors.lightTheme.boxShadow};
+  box-shadow: ${props => props.theme.colors.boxShadow};
   backdrop-filter: blur(20px);
   border-radius: 1em;
   padding: 2em;
-  color: ${props => props.theme.colors.lightTheme.altText};
+  color: ${props => props.theme.colors.altText};
   width: 70vw;
 `;
 
