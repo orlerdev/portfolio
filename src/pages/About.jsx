@@ -8,6 +8,7 @@ const Entries = styled.div`
   flex-direction:column;
   align-items:center;
   row-gap:40px;
+  margin-top:50px;
 `;
 
 const Entry = styled.div`

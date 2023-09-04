@@ -13,6 +13,7 @@ const LandingContainer = styled.div`
   
   ${media.small`
     flex-direction: column;
+    justify-content:unset;
   `}
   
 `;
