@@ -13,6 +13,7 @@ const Nav = styled.nav`
   height: 50px;
   padding: 20px;
   background: ${props => props.theme.colors.frosted};
+  color:${props => props.theme.colors.altText};
   backdrop-filter: blur(20px);
   border: none;
   outline: none;

@@ -17,7 +17,7 @@ const Entry = styled.div`
   background: ${props => props.theme.colors.frosted};
   background-image: ${props => props.theme.colors.backgroundImage};
   background-blend-mode: overlay;
-  box-shadow: ${props => props.theme.colors.boxShadow};
+  box-shadow: ${props => props.theme.effects.boxShadow};
   backdrop-filter: blur(20px);
   border-radius:1em;
   padding-left:20px;
@@ -66,7 +66,7 @@ const AboutBody = styled.ul`
   row-gap:10px;
   
   ${media.xl`
-    font-size:1.5rem;
+    font-size:1.2rem;
   `}
   
   li{
@@ -82,12 +82,11 @@ const AboutBody = styled.ul`
 `;
 
 const Photo = styled.img`
-  max-width: 35%;
+  max-width: 40%;
   max-height:100%;
-  width:35%;
+  width:40%;
   height:auto;
   aspect-ratio:auto;
-  object-fit: contain;
   border-radius:1em;
   
   ${media.small`

@@ -1,34 +1,82 @@
 import styled from '@emotion/styled';
-
+import { media } from '../styles/utils.js';
+import Avatar from '../components/Avatar.jsx';
 
 const LandingContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  row-gap: 5%;
-  text-align: center;
-  height: 100vh;
-  width: 50vw;
-  font-family: ${props => props.theme.fonts.alt};
+  width:100%;
+  height:100%;
+  font-family: ${props => props.theme.fonts.inter};
   color: ${props => props.theme.colors.altText};
+  
+  ${media.small`
+    flex-direction: column;
+  `}
+  
+`;
+
+const TextWrapper = styled.div`
+  display:flex;
+  flex-direction:column;
+  height: 100%;
+  width: 50%;
+  justify-content: space-around;
+  
+  ${media.small`
+    width:100%
+  `}
+  
+   ${media.xs`
+    text-align:center;
+  `}
+  
 `;
 
 const H1 = styled.h1`
-  font-family: ${props => props.theme.fonts.alt};
-  font-size: 12em;
-  //align-self:flex-start;
+  font-family: ${props => props.theme.fonts.inter};
+  font-size: 15em;
+  
+  ${media.small`
+    font-size:10rem;
+  `}
 `;
 
 const H2 = styled.h2`
-  font-size: 5rem;
+  margin-top: -10rem;
+  font-size: 8rem;
+  
+  ${media.small`
+    font-size:5rem;
+    margin-top: -5rem;
+  `}
+`;
+
+const H3 = styled.h3`
+  margin-top: -5rem;
+  font-size: 2.5rem;
+  
+  ${media.small`
+    font-size:2rem;
+    margin-top:unset;
+  `}
+  
+  ${media.xs`
+    font-size:1.5rem;
+  `}
+  
 `;
 
 const Landing = () => {
   return (
     <LandingContainer>
-      <H1>{`Hi! I'm Jared`}</H1>
-      <H2>Full Stack Software Developer <br /> and US Navy Veteran</H2>
+      <TextWrapper>
+      <H1>{`Hi!`}</H1>
+      <H2>{`I'm Jared`}</H2>
+      <H3>Full Stack Software Developer <br /> and US Navy Veteran</H3>
+        </TextWrapper>
+      <Avatar />
     </LandingContainer>
   );
 };

@@ -68,8 +68,8 @@ const PageColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  //flex-wrap: wrap;
+  align-items: center;    
+  
 `;
 
 const DefaultLayout = ({ children }) => {

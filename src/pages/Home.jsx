@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { media } from '../styles/utils.js';
 import DefaultLayout from '../layouts/DefaultLayout';
 import Landing from '../components/Landing';
-import Avatar from '../components/Avatar.jsx';
 import TechStack from '../components/TechStack.jsx';
 import Contributions from '../components/Contributions.jsx';
 
@@ -12,7 +11,7 @@ const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 40px;
+  row-gap: 60px;
   padding: 0 40px;
   min-height: 100vh;
   min-width:100vw;
@@ -50,7 +49,6 @@ const Home = () => {
       <HomeWrapper>
         <LandingWrapper>
           <Landing />
-          <Avatar />
         </LandingWrapper>
         <Contributions username={username} />
         <TechStack />
