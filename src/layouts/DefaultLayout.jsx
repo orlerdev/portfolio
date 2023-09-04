@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
-import { HoverProvider } from '../context/HoverContext';
 import { media } from '../styles/utils.js';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import DC3 from '../assets/DC3.jpg';
+// import DC3 from '../assets/DC3.jpg';
+import DC1 from '../assets/DC1.webp';
 
 const PageWrapper = styled.div`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
-  background: url(${DC3}) no-repeat fixed top;
+  min-width:100vw;
+  min-height:100vh;
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${DC1}) no-repeat fixed top;
   background-size: cover;
-  font-family: ${props => props.theme.fonts.fontFamily};
+  font-family: ${props => props.theme.fonts.victor};
 `;
 
 const GlowingEffect = styled.div`
@@ -56,7 +56,6 @@ const PageContainer = styled.div`
 `;
 const PageRow = styled.div`
   display: flex;
-  //max-width:1100px;	
   justify-content: center;
   padding: 20px;
 
@@ -69,9 +68,8 @@ const PageColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  //padding-top:120px;
+  align-items: center;    
+  
 `;
 
 const DefaultLayout = ({ children }) => {
@@ -91,7 +89,6 @@ const DefaultLayout = ({ children }) => {
     };
   }, []);
   return (
-    <HoverProvider>
       <PageWrapper>
         <GlowingEffect
           className={active ? 'active' : ''}
@@ -110,7 +107,6 @@ const DefaultLayout = ({ children }) => {
           </PageRow>
         </PageContainer>
       </PageWrapper>
-    </HoverProvider>
   );
 };
 

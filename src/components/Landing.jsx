@@ -1,81 +1,82 @@
 import styled from '@emotion/styled';
-import { useHover } from '../context/HoverContext';
+import { media } from '../styles/utils.js';
+import Avatar from '../components/Avatar.jsx';
 
 const LandingContainer = styled.div`
-  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: fit-content;
-  width: 70vw;
-  background: ${props => props.theme.colors.lightTheme.frosted};
-  background-image: ${props => props.theme.colors.lightTheme.backgroundImage};
-  background-blend-mode: overlay;
-  box-shadow: ${props => props.theme.colors.lightTheme.boxShadow};
-  backdrop-filter: blur(20px);
-  border-radius:1em;
-  padding: 0 5px 5px 20px;
-  color: ${props => props.theme.colors.lightTheme.altText};
-
-  h3 {
-    font-size: 2.3rem;
-    margin: 0;
-  }
+  width:100%;
+  height:100%;
+  font-family: ${props => props.theme.fonts.inter};
+  color: ${props => props.theme.colors.altText};
+  
+  ${media.small`
+    flex-direction: column;
+  `}
+  
 `;
 
-const LandingH2 = styled.h2`
-  font-size: 5em;
-  margin: 0;
+const TextWrapper = styled.div`
+  display:flex;
+  flex-direction:column;
+  height: 100%;
+  width: 50%;
+  justify-content: space-around;
+  
+  ${media.small`
+    width:100%
+  `}
+  
+   ${media.xs`
+    text-align:center;
+  `}
+  
 `;
 
-const LandingSpan = styled.span`
-  font-size: 3.5rem;
-  margin: 0;
-  display: inline-block;
+const H1 = styled.h1`
+  font-family: ${props => props.theme.fonts.inter};
+  font-size: 15em;
+  
+  ${media.small`
+    font-size:10rem;
+  `}
 `;
 
-const IntroWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4.5rem;
-  column-gap: 1rem;
+const H2 = styled.h2`
+  margin-top: -10rem;
+  font-size: 8rem;
+  
+  ${media.small`
+    font-size:5rem;
+    margin-top: -5rem;
+  `}
 `;
 
-const AvatarTextWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+const H3 = styled.h3`
+  margin-top: -5rem;
+  font-size: 2.5rem;
+  
+  ${media.small`
+    font-size:2rem;
+    margin-top:unset;
+  `}
+  
+  ${media.xs`
+    font-size:1.5rem;
+  `}
+  
 `;
 
 const Landing = () => {
-  const { setIsHovered } = useHover();
-
-  const handleHover = () => {
-    setIsHovered(true);
-  };
-
-  const handleLeave = () => {
-    setIsHovered(false);
-  };
-
   return (
     <LandingContainer>
-      <LandingH2>{`Hi!`}</LandingH2>
-      <IntroWrapper>
-        <LandingSpan>{`I'm`}</LandingSpan>
-        <LandingSpan
-          style={{ cursor: 'pointer' }}
-          onMouseEnter={handleHover}
-          onMouseLeave={handleLeave}>{`Jared`}</LandingSpan>
-      </IntroWrapper>
-      <AvatarTextWrapper>
-        <h3>
-          Full Stack Software Developer <br /> and US Navy Veteran
-        </h3>
-      </AvatarTextWrapper>
+      <TextWrapper>
+      <H1>{`Hi!`}</H1>
+      <H2>{`I'm Jared`}</H2>
+      <H3>Full Stack Software Developer <br /> and US Navy Veteran</H3>
+        </TextWrapper>
+      <Avatar />
     </LandingContainer>
   );
 };
