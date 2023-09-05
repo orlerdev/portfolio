@@ -20,7 +20,13 @@ const Wrapper = styled.div`
   font-size: 1.5rem;
   
   ${media.small`
-    width:100%;
+  padding:20px;
+    width:500px;
+  `}
+  
+  ${media.xs`
+    width:350px;
+    height:auto;
   `}
 
 `;
@@ -31,15 +37,38 @@ const ContributionsContainer = styled.div`
   row-gap: 10px;
   width:100%;
   
+  ${media.small`
+    max-width:90%;
+  `}
+  
   h2{
     align-self:center;
     font-size:2.5rem;
-  }  
+    
+    ${media.small`
+      font-size:1.5rem;
+    `}
+  } 
+  
+  h3{
+    font-size:1.2rem;
+    
+    ${media.small`
+      font-size:1.5rem;
+    `}
+    
+  }
+  
 `;
 
 const Span = styled.span`
   display: block;
   font-size: 1.5rem;
+  
+  ${media.xs`
+    font-size: 1rem;
+  `}
+  
 `;
 
 const Contributions = ({ username }) => {

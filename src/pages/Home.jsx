@@ -19,7 +19,7 @@ const HomeWrapper = styled.div`
   overflow-y: auto;
 
   ${media.xl`
-		align-items:unset;
+		
 	`}
 
   ${media.medium`
@@ -38,8 +38,14 @@ const LandingWrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
   height:100vh;
-  min-width:100vw;
+  width:100vw;
   padding:40px;
+  
+  ${media.xs`
+    height:auto;
+    width:350px;
+  `}
+  
 `;
 
 const Home = () => {

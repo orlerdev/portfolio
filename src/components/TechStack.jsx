@@ -20,8 +20,13 @@ const TechWrapper = styled.div`
   row-gap:40px;
   
     ${media.small`
-    width:100%;
+    width:500px;
   `}
+  
+  ${media.xs`
+    width:350px;
+  `}
+  
 `;
 
 const H2 = styled.h2`

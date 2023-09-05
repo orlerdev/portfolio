@@ -14,6 +14,11 @@ const LandingContainer = styled.div`
   ${media.small`
     flex-direction: column;
     justify-content:unset;
+    width:500px;
+  `}
+  
+  ${media.xs`
+    width:350px;
   `}
   
 `;

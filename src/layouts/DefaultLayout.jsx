@@ -4,114 +4,117 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-// import DC3 from '../assets/DC3.jpg';
 import DC1 from '../assets/DC1.webp';
 
 const PageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-width:100vw;
-  min-height:100vh;
-  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${DC1}) no-repeat fixed top;
-  background-size: cover;
-  font-family: ${props => props.theme.fonts.victor};
+	display: flex;
+	flex-direction: column;
+	min-height:100vh;
+	min-width:100%;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(${DC1}) no-repeat fixed top;
+	background-size: cover;
+	font-family: ${(props) => props.theme.fonts.victor};
+	
 `;
 
 const GlowingEffect = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 80%;
-  pointer-events: none;
-  background: radial-gradient(circle,
-  rgba(255, 255, 255, .7) 1%,
-  transparent 40%);
-  transform: translate(-50%, -50%);
-  opacity: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 80%;
+	height: 80%;
+	pointer-events: none;
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 0.7) 1%,
+		transparent 40%
+	);
+	transform: translate(-50%, -50%);
+	opacity: 1;
 
-  &.active {
-    animation: glow 10s ease-out infinite;
-  }
+	&.active {
+		animation: glow 10s ease-out infinite;
+	}
 
-  @keyframes glow {
-    0% {
-      opacity: 0.1;
-      /* transform: scale(1); */
-    }
-    100% {
-      opacity: 0.1;
-      /* transform: scale(1.1); */
-    }
-  }
+	@keyframes glow {
+		0% {
+			opacity: 0.1;
+			/* transform: scale(1); */
+		}
+		100% {
+			opacity: 0.1;
+			/* transform: scale(1.1); */
+		}
+	}
 
-  ${media.small`display:none;`}
-
+	${media.small`display:none;`}
 `;
 
 const PageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border:2px solid blue;
 `;
 const PageRow = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+	display: flex;
+	justify-content: center;
+	flex:1 0 0;
+	border:2px solid goldenrod;
 
-  ${media.xl`max-width:1100px;`}
+	${media.xl`max-width:1100px; width:100%;`}
 
-  ${media.xs`padding:0;`}
-
+	${media.xs``}
 `;
 const PageColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;    
-  
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border:2px solid purple;
 `;
 
 const DefaultLayout = ({ children }) => {
-  const [active, setActive] = useState(false);
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+	const [active, setActive] = useState(false);
+	const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setCursorPos({ x: e.clientX, y: e.clientY });
-      setActive(true);
-    };
+	useEffect(() => {
+		const handleMouseMove = (e) => {
+			setCursorPos({ x: e.clientX, y: e.clientY });
+			setActive(true);
+		};
 
-    document.addEventListener('mousemove', handleMouseMove);
+		document.addEventListener('mousemove', handleMouseMove);
 
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-  return (
-      <PageWrapper>
-        <GlowingEffect
-          className={active ? 'active' : ''}
-          style={{
-            top: cursorPos.y,
-            left: cursorPos.x
-          }}
-        />
-        <PageContainer>
-          <PageRow>
-            <PageColumn>
-              <Header />
-              {children}
-              <Footer />
-            </PageColumn>
-          </PageRow>
-        </PageContainer>
-      </PageWrapper>
-  );
+		return () => {
+			document.removeEventListener('mousemove', handleMouseMove);
+		};
+	}, []);
+	return (
+		<PageWrapper>
+			<GlowingEffect
+				className={active ? 'active' : ''}
+				style={{
+					top: cursorPos.y,
+					left: cursorPos.x
+				}}
+			/>
+			<PageContainer>
+				<PageRow>
+					<PageColumn>
+						<Header />
+						{children}
+						<Footer />
+					</PageColumn>
+				</PageRow>
+			</PageContainer>
+		</PageWrapper>
+	);
 };
 
 export default DefaultLayout;
 
 DefaultLayout.propTypes = {
-  children: PropTypes.node.isRequired
+	children: PropTypes.node.isRequired
 };
