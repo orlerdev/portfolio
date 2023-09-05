@@ -14,10 +14,14 @@ const AvatarWrapper = styled.div`
 	overflow: hidden;
 
 	${media.small`
-		max-width:100%;
-		max-height:100%;
-    height:100%;
+		height:auto;
+		width:500px;
 	`}
+	
+	${media.xs`
+		width:350px;
+	`}
+	
 `;
 
 const AvatarImage = styled.img`

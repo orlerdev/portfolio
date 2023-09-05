@@ -55,13 +55,11 @@ const PageContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border:2px solid blue;
 `;
 const PageRow = styled.div`
 	display: flex;
 	justify-content: center;
 	flex:1 0 0;
-	border:2px solid goldenrod;
 
 	${media.xl`max-width:1100px; width:100%;`}
 
@@ -72,7 +70,6 @@ const PageColumn = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	border:2px solid purple;
 `;
 
 const DefaultLayout = ({ children }) => {
