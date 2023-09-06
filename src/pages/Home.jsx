@@ -18,9 +18,6 @@ const HomeWrapper = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
 
-  ${media.xl`
-		align-items:unset;
-	`}
 
   ${media.medium`
 		padding: 30px;
