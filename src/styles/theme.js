@@ -7,6 +7,9 @@ const theme = {
     large: '1200px',
     xl: '1440px'
   },
+  retinaQueries: {
+    retina: '@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi)'
+  },
   colors: {
     clr1: '#00c2ff',
     clr2: '#33ff8c',
