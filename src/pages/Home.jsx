@@ -19,7 +19,7 @@ const HomeWrapper = styled.div`
   overflow-y: auto;
 
   ${media.xl`
-		
+		align-items:unset;
 	`}
 
   ${media.medium`

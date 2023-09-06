@@ -15,7 +15,7 @@ const PageWrapper = styled.div`
 		url(${DC1}) no-repeat fixed top;
 	background-size: cover;
 	font-family: ${(props) => props.theme.fonts.victor};
-	
+	overflow-x:hidden;
 `;
 
 const GlowingEffect = styled.div`

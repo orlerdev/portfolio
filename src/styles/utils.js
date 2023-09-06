@@ -12,6 +12,11 @@ export const media = {
       ${styles}
     }
   `,
+  smedium: (styles) => css`
+    @media (max-width: ${theme.breakpoints.smedium}) {
+      ${styles}
+    }
+  `,
   medium: (styles) => css`
     @media (max-width: ${theme.breakpoints.medium}) {
       ${styles}

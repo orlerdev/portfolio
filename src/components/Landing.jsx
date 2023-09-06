@@ -11,8 +11,12 @@ const LandingContainer = styled.div`
   font-family: ${props => props.theme.fonts.inter};
   color: ${props => props.theme.colors.altText};
   
-  ${media.small`
+  ${media.smedium`
     flex-direction: column;
+    
+  `}
+  
+  ${media.small`
     justify-content:unset;
     width:500px;
   `}
@@ -30,7 +34,7 @@ const TextWrapper = styled.div`
   width: 50%;
   justify-content: space-around;
   
-  ${media.small`
+  ${media.smedium`
     width:100%
   `}
   

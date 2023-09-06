@@ -4,8 +4,8 @@ import headshot from '../assets/Headshot.png';
 
 const AvatarWrapper = styled.div`
 	position: relative;
-	width: auto;
-	height: 45vh;
+	width: 500px;
+	height: 600px;
 	border-radius: 1.2rem;
 	background: ${(props) => props.theme.colors.frosted};
 	background-image: ${(props) => props.theme.colors.backgroundImage};
@@ -13,22 +13,31 @@ const AvatarWrapper = styled.div`
 	box-shadow: ${(props) => props.theme.effects.boxShadow};
 	overflow: hidden;
 
-	${media.small`
-		height:auto;
-		width:500px;
+		${media.small`
+		height:500px;
+		width:400px;
 	`}
 	
 	${media.xs`
+		height:450px;
 		width:350px;
 	`}
 	
 `;
 
 const AvatarImage = styled.img`
-	max-height: 100%;
-	height: 100%;
-	width: 100%;
-	aspect-ratio: auto;
+	height:600px;
+	width:500px;
+	
+	${media.small`
+		height:500px;
+		width:400px;
+	`}
+	
+	${media.xs`
+		height:450px;
+		width:350px;
+	`}
 `;
 
 const Avatar = () => {

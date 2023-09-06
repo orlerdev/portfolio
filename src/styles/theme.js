@@ -1,8 +1,8 @@
 const theme = {
   breakpoints: {
     xs: '475px',
-    small: '776px',
-    900: '900px',
+    small: '800px',
+    smedium: '900px',
     medium: '1024px',
     large: '1200px',
     xl: '1440px'
