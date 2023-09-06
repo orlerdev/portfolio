@@ -48,7 +48,7 @@ const GlowingEffect = styled.div`
 		}
 	}
 
-	${media.small`display:none;`}
+	${media.medium`display:none;`}
 `;
 
 const PageContainer = styled.div`
