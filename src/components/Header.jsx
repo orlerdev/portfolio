@@ -13,7 +13,7 @@ const Nav = styled.nav`
   height: 50px;
   padding: 20px;
   background: ${props => props.theme.colors.frosted};
-  color:${props => props.theme.colors.altText};
+  color: ${props => props.theme.colors.altText};
   backdrop-filter: blur(20px);
   border: none;
   outline: none;
@@ -62,11 +62,13 @@ const Navbar = () => {
     <Nav>
       <MobileMenu />
       <Menu>
-            <Item to="/">Home</Item>
-            <Span>|</Span>
-            <Item to="/about">About</Item>
-            <Span>|</Span>
-            <Item to="/projects">Projects</Item>
+        <Item to="/">Home</Item>
+        <Span>|</Span>
+        <Item to="/about">About</Item>
+        <Span>|</Span>
+        <Item to="/projects">Projects</Item>
+        <Span>|</Span>
+        <Item to='/resume'>Resume</Item>
       </Menu>
     </Nav>
   );
