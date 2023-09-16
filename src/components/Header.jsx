@@ -67,8 +67,8 @@ const Navbar = () => {
         <Item to="/about">About</Item>
         <Span>|</Span>
         <Item to="/projects">Projects</Item>
-        {/*<Span>|</Span>*/}
-        {/*<Item to='/resume'>Resume</Item>*/}
+        <Span>|</Span>
+        <Item to='/resume'>Resume</Item>
       </Menu>
     </Nav>
   );
