@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source": "/api/:path*",
+        "function": "contactForm"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

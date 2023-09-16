@@ -62,8 +62,8 @@ const Button = styled.button`
   backdrop-filter: blur(20px);
   border-radius: .5rem;
   transition: all ease-in .2s;
-  border:none;
-  outline:none;
+  border: none;
+  outline: none;
 `;
 const SubmitButton = styled(Button)`
   grid-area: submit;
@@ -101,12 +101,22 @@ const ContactForm = ({ toggleModal }) => {
       const res = await axios.post('/api/send-email', formData);
       if (res.data.success) {
         alert('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
         toggleModal();
       } else {
         alert('There was an error sending your message');
       }
     } catch (error) {
-      alert('An error occurred. Please try again.');
+      if (error.response) {
+        console.error('Data:', error.response.data);
+        console.error('Status:', error.response.status);
+        console.error('Headers:', error.response.headers);
+      } else if (error.request) {
+        console.error('Request:', error.request);
+      } else {
+        console.error('General Error:', error.message);
+      }
+      alert( error.response?.data || 'An error occurred. Please try again.');
       console.error('Error:', error);
     }
   };
@@ -121,7 +131,7 @@ const ContactForm = ({ toggleModal }) => {
         <Message name="message" value={formData.message} onChange={handleChange}
                  placeholder="Message..." required />
         <SubmitButton type="submit">Submit</SubmitButton>
-        <CancelButton onClick={toggleModal}>Cancel</CancelButton>
+        <CancelButton type="button" onClick={toggleModal}>Cancel</CancelButton>
       </Form>
     </>);
 };
