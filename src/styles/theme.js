@@ -23,7 +23,8 @@ const theme = {
   },
   redacted: {
     color: '#000',
-    backgroundColor: '#000'
+    backgroundColor: '#000',
+    borderColor: '#fff'
   },
   effects: {
     blur: '1rem',
