@@ -8,7 +8,7 @@ const Entries = styled.div`
   flex-direction:column;
   align-items:center;
   row-gap:40px;
-  margin-top:50px;
+  margin-top:90px;
 `;
 
 const Entry = styled.div`
@@ -18,7 +18,7 @@ const Entry = styled.div`
   background: ${props => props.theme.colors.frosted};
   background-image: ${props => props.theme.colors.backgroundImage};
   background-blend-mode: overlay;
-  box-shadow: ${props => props.theme.effects.boxShadow};
+  box-shadow: ${props => props.theme.effects.darkBoxShadow};
   backdrop-filter: blur(20px);
   border-radius:1em;
   padding-left:20px;

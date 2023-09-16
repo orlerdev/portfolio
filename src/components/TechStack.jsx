@@ -10,7 +10,7 @@ const TechWrapper = styled.div`
   background: ${props => props.theme.colors.frosted};
   background-image: ${props => props.theme.colors.backgroundImage};
   background-blend-mode: overlay;
-  box-shadow: ${props => props.theme.effects.boxShadow};
+  box-shadow: ${props => props.theme.effects.darkBoxShadow};
   backdrop-filter: blur(20px);
   border-radius: 1em;
   padding: 2em;
