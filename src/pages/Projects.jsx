@@ -13,7 +13,7 @@ const ProjectsWrapper = styled.div`
   margin-top:50px;
   background: ${props => props.theme.colors.frosted};
   color: ${props => props.theme.colors.altText};
-  box-shadow: ${props => props.theme.effects.boxShadow};
+  box-shadow: ${props => props.theme.effects.darkBoxShadow};
   border-radius: 1em;
 `;
 const ProjectTitle = styled.h2`

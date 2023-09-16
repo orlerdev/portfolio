@@ -10,7 +10,7 @@ const AvatarWrapper = styled.div`
 	background: ${(props) => props.theme.colors.frosted};
 	background-image: ${(props) => props.theme.colors.backgroundImage};
 	background-blend-mode: overlay;
-	box-shadow: ${(props) => props.theme.effects.boxShadow};
+	box-shadow: ${(props) => props.theme.effects.darkBoxShadow};
 	overflow: hidden;
 
 		${media.small`
