@@ -30,8 +30,8 @@ app.post('/send-email', (req, res) => {
     to: 'orlerdev@gmail.com',
     from: 'orlerdev@gmail.com',
     subject: 'Contact Form Submission',
-    text: `${name} ${email} says: ${message}`,
-    html: `${message}`
+    text: `Name: ${name} Email: ${email} says: ${message}`,
+    html: `Name: ${name} </br> Email: ${email} </br> says: ${message}`
   };
 
   sgMail.send(msg)

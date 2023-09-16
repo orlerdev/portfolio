@@ -81,6 +81,7 @@ const MobileMenu = () => {
         <MobItem to="/">Home</MobItem>
         <MobItem to="/about">About</MobItem>
         <MobItem to="/projects">Projects</MobItem>
+        <MobItem to="/resume">Resume</MobItem>
       </MobMenu>
     </MobileWrapper>
   );

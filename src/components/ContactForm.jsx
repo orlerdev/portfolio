@@ -98,7 +98,7 @@ const ContactForm = ({ toggleModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/send-email', formData);
+      const res = await axios.post('https://us-central1-portfolio-7e0ed.cloudfunctions.net/contactForm/send-email', formData);
       if (res.data.success) {
         alert('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
@@ -107,17 +107,7 @@ const ContactForm = ({ toggleModal }) => {
         alert('There was an error sending your message');
       }
     } catch (error) {
-      if (error.response) {
-        console.error('Data:', error.response.data);
-        console.error('Status:', error.response.status);
-        console.error('Headers:', error.response.headers);
-      } else if (error.request) {
-        console.error('Request:', error.request);
-      } else {
-        console.error('General Error:', error.message);
-      }
-      alert( error.response?.data || 'An error occurred. Please try again.');
-      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
     }
   };
   return (
