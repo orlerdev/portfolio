@@ -134,6 +134,7 @@ const Project = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: .5rem;
+  border-radius:1rem;
   border: 1px solid ${props => props.theme.colors.altText};
 `;
 const ProjectTitle = styled(H2)`
@@ -147,9 +148,15 @@ const ExperienceContainer = styled.div`
   border: 1px solid ${props => props.theme.colors.altText};
   border-radius: .5rem;
   padding: .5rem;
+  display:flex;
+  flex-direction:column;
+  row-gap:.5rem;
 `;
 const ExpPara = styled(P)`
   width: fit-content;
+  padding: unset;
+  border-radius: unset;
+  margin-top: unset;
 `;
 const ExpList = styled(UL)`
   max-height: 100%;
