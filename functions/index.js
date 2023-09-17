@@ -22,13 +22,29 @@ app.use(cors({ origin: true }));
 app.post('/send-email', (req, res) => {
   const { email, name, message } = req.body;
 
-  const msg = {
+  const msgToMe = {
     to: 'orlerdev@gmail.com',
-    from: `${email}`,
+    from: 'orlerdev@gmail.com',
     subject: 'Contact Form Submission',
     text: `Name: ${name} Email: ${email} says: ${message}`,
     html: `Name: ${name} </br> Email: ${email} </br> says: ${message}`
   };
+
+  const msgToUser = {
+    to: `${email}`,
+    from: 'orlerdev@gmail.com',
+    subject: 'Thank you for reaching out',
+    text: `Thank you for reaching out. I have received your message and will respond as soon as possible.`,
+    html: `
+        <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd;">
+            <h2 style="color: #333;">Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <hr>
+            <p>Thank you for reaching out. I have received your message and will respond as soon as possible.</p>
+        </div>
+    `
+  }
 
   sgMail.send(msg)
     .then(() => res.status(200).send({ success: true }))
