@@ -31,6 +31,8 @@ const Form = styled.form`
   "submit cancel";
   gap: 1rem;
   margin:0;
+  justify-items:center;
+  align-items: center;
 
   ${media.medium`
       max-width:unset;
