@@ -19,16 +19,12 @@ app.set('trust proxy', 1);
 app.use('/send-email', limiter);
 app.use(cors({ origin: true }));
 
-app.get('/send-email', (req, res) => {
-  res.send('GET request is working!');
-});
-
 app.post('/send-email', (req, res) => {
   const { email, name, message } = req.body;
 
   const msg = {
     to: 'orlerdev@gmail.com',
-    from: 'orlerdev@gmail.com',
+    from: `${email}`,
     subject: 'Contact Form Submission',
     text: `Name: ${name} Email: ${email} says: ${message}`,
     html: `Name: ${name} </br> Email: ${email} </br> says: ${message}`
