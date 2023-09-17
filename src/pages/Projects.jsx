@@ -31,7 +31,7 @@ const ProjectLink = styled.a`
 `;
 
 const PhotoWrapper = styled.div`
-  position:relative;
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -50,7 +50,7 @@ const ProjectDescription = styled.p`
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width:80%;
+  width: 80%;
   height: fit-content;
   opacity: ${props => props.isHovered ? '1' : '0'};
   font-size: 1.2rem;
@@ -68,31 +68,34 @@ const ProjectDescription = styled.p`
 
 
 const Projects = () => {
-  const [hoveredPhoto, setHoveredPhoto] = useState(null);
+    const [hoveredPhoto, setHoveredPhoto] = useState(null);
+    const [isTouchDevice, setIsTouchDevice] = useState('ontouchstart' in window);
 
+    return (
+        <DefaultLayout>
+            <ProjectsWrapper>
+                {projects.map(project => (
+                    <ProjectContainer key={project.title}>
+                        <ProjectTitle>{project.title}</ProjectTitle>
+                        <ProjectLink href={project.link} target='_blank' rel='noreferrer'>
+                            <PhotoWrapper>
+                                <ProjectPhoto
+                                    src={project.image}
+                                    alt='Project Photo'
+                                    onMouseEnter={() => setHoveredPhoto(project.title)}
+                                    onMouseLeave={() => setHoveredPhoto(null)}
+                                />
+                                {!isTouchDevice &&
+                                    <ProjectDescription
+                                        isHovered={hoveredPhoto === project.title}>{project.body}</ProjectDescription>
+                                }
+                            </PhotoWrapper>
+                        </ProjectLink>
 
-  return (
-    <DefaultLayout>
-      <ProjectsWrapper>
-        {projects.map(project => (
-          <ProjectContainer key={project.title}>
-            <ProjectTitle>{project.title}</ProjectTitle>
-            <ProjectLink href={project.link} target='_blank' rel='noreferrer'>
-              <PhotoWrapper>
-                <ProjectPhoto
-                  src={project.image}
-                  alt='Project Photo'
-                  onMouseEnter={() => setHoveredPhoto(project.title)}
-                  onMouseLeave={() => setHoveredPhoto(null)}
-                />
-                  <ProjectDescription isHovered={hoveredPhoto === project.title}>{project.body}</ProjectDescription>
-              </PhotoWrapper>
-            </ProjectLink>
-
-          </ProjectContainer>
-        ))}
-      </ProjectsWrapper>
-    </DefaultLayout>
-  );
+                    </ProjectContainer>
+                ))}
+            </ProjectsWrapper>
+        </DefaultLayout>
+    );
 };
 export default Projects;
