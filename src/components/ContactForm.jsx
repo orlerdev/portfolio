@@ -35,10 +35,12 @@ const Form = styled.form`
       max-width:unset;
       max-height:unset;
       width: 70%;
+      height:fit-content;
       `}
 
   ${media.smedium`
       width:90%;
+      height:fit-content;
       `}
 `;
 
