@@ -1,6 +1,7 @@
+import {useState} from 'react';
 import styled from '@emotion/styled';
 import axios from 'axios';
-import { useState } from 'react';
+import {media} from '../styles/utils.js';
 import PropTypes from 'prop-types';
 
 const Overlay = styled.div`
@@ -29,6 +30,16 @@ const Form = styled.form`
   "message message"
   "submit cancel";
   gap: 20px;
+
+  ${media.medium`
+      max-width:unset;
+      max-height:unset;
+      width: 70%;
+      `}
+
+  ${media.smedium`
+      width:90%;
+      `}
 `;
 
 const Input = styled.input`
@@ -86,47 +97,47 @@ const CancelButton = styled(Button)`
   }
 `;
 
-const ContactForm = ({ toggleModal }) => {
-  const [formData, setFormData] = useState({
-    name: '', email: '', message: ''
-  });
+const ContactForm = ({toggleModal}) => {
+    const [formData, setFormData] = useState({
+        name: '', email: '', message: ''
+    });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value});
+    };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('https://us-central1-portfolio-7e0ed.cloudfunctions.net/contactForm/send-email', formData);
-      if (res.data.success) {
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-        toggleModal();
-      } else {
-        alert('There was an error sending your message');
-      }
-    } catch (error) {
-      alert('An error occurred. Please try again.');
-    }
-  };
-  return (
-    <>
-      <Overlay onClick={toggleModal} />
-      <Form onSubmit={handleSubmit}>
-        <Name name="name" value={formData.name} onChange={handleChange}
-              placeholder="Name" required />
-        <Email type="email" name="email" value={formData.email}
-               onChange={handleChange} placeholder="Email" required />
-        <Message name="message" value={formData.message} onChange={handleChange}
-                 placeholder="Message..." required />
-        <SubmitButton type="submit">Submit</SubmitButton>
-        <CancelButton type="button" onClick={toggleModal}>Cancel</CancelButton>
-      </Form>
-    </>);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post('https://us-central1-portfolio-7e0ed.cloudfunctions.net/contactForm/send-email', formData);
+            if (res.data.success) {
+                alert('Message sent successfully!');
+                setFormData({name: '', email: '', message: ''});
+                toggleModal();
+            } else {
+                alert('There was an error sending your message');
+            }
+        } catch (error) {
+            alert('An error occurred. Please try again.');
+        }
+    };
+    return (
+        <>
+            <Overlay onClick={toggleModal}/>
+            <Form onSubmit={handleSubmit}>
+                <Name name="name" value={formData.name} onChange={handleChange}
+                      placeholder="Name" required/>
+                <Email type="email" name="email" value={formData.email}
+                       onChange={handleChange} placeholder="Email" required/>
+                <Message name="message" value={formData.message} onChange={handleChange}
+                         placeholder="Message..." required/>
+                <SubmitButton type="submit">Submit</SubmitButton>
+                <CancelButton type="button" onClick={toggleModal}>Cancel</CancelButton>
+            </Form>
+        </>);
 };
 export default ContactForm;
 
 ContactForm.propTypes = {
-  toggleModal: PropTypes.func.isRequired
+    toggleModal: PropTypes.func.isRequired
 };

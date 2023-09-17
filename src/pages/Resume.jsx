@@ -51,6 +51,7 @@ const SPAN = styled.span`
 
   ${media.medium`
       font-size:1rem;
+      width:50%;
       `}
   ${media.smedium`
       width:100%;
@@ -68,6 +69,7 @@ const A = styled.a`
 
   ${media.medium`
       font-size:1rem;
+      width:50%;
       `}
   ${media.smedium`
       width:100%;
@@ -125,7 +127,7 @@ const ResumeBody = styled.main`
       `}
 `;
 const SectionTitle = styled(H2)`
-  align-self:flex-start;
+  align-self: flex-start;
 `;
 const SectionSubtitle = styled(H3)``;
 // RESUME HEADER
@@ -133,7 +135,7 @@ const ResumeHeader = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  
+
   ${media.small`
       row-gap:.2rem;
       `}
@@ -162,6 +164,13 @@ const Title = styled(H2)`
       `}
 
 `;
+const LocationWrapper = styled.div`
+  display:flex;
+  align-items: center;
+  column-gap:1rem;
+  padding:0 .5rem;
+`;
+
 const Location = styled(H3)`
   font-size: 1.8rem;
 
@@ -218,7 +227,7 @@ const Project = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: .2rem;
-  padding-top:.5rem;
+  padding-top: .5rem;
   border-radius: 1rem;
   border: 1px solid ${props => props.theme.colors.altText};
 
@@ -236,8 +245,8 @@ const ProjectTitle = styled(H3)`
       `}
 `;
 const ProjectBody = styled(P)`
-  margin:0;
-  padding:1rem;
+  margin: 0;
+  padding: 1rem;
 `;
 // EXPERIENCE
 const Experience = styled(SECTION)``;
@@ -300,8 +309,8 @@ const ResumeAside = styled.aside`
   ${media.medium`
       padding: 1rem;
       `}
-  
- ${media.small`
+
+  ${media.small`
      border-radius:1rem 1rem 0 0;
      `}
 `;
@@ -328,7 +337,7 @@ const Education = styled.div`
 const EducationTitle = styled.h2`
   border-bottom: 1px solid ${props => props.theme.colors.altText};
   padding: 10px;
-  
+
   ${media.medium`
       font-size:1.2rem;
       `}
@@ -359,7 +368,7 @@ const EduPara = styled(P)`
   padding: unset;
   border-radius: unset;
   margin-top: unset;
-  
+
   ${media.small`
       font-size:1rem;
       `}
@@ -428,10 +437,12 @@ const Resume = () => {
                 <ResumeHeader>
                     <Name>Jared Orler</Name>
                     <Title>Software Developer</Title>
-                    {!isMobileView &&
-                        <Icon icon={faLocationDot}/>
-                    }
-                    <Location>San Antonio, TX</Location>
+                    <LocationWrapper>
+                        {!isMobileView &&
+                            <Icon icon={faLocationDot}/>
+                        }
+                        <Location>San Antonio, TX</Location>
+                    </LocationWrapper>
                     <InfoWrapper>
                         <InfoContainer>
                             {!isMobileView &&
