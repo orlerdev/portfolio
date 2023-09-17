@@ -21,7 +21,6 @@ const Form = styled.form`
   z-index: 6;
   min-width: 35vw;
   max-height: 50vh;
-  height: fit-content;
   display: grid;
   grid-template-columns:1fr 1fr;
   grid-template-areas:
@@ -31,19 +30,15 @@ const Form = styled.form`
   "submit cancel";
   gap: 1rem;
   margin:0;
-  justify-items:center;
-  align-items: center;
 
   ${media.medium`
       max-width:unset;
       max-height:unset;
       width: 70%;
-      height:fit-content;
       `}
 
   ${media.smedium`
       width:90%;
-      height:fit-content;
       gap:.5rem;
       grid-template-columns:1fr;
       grid-template-areas:
