@@ -16,6 +16,7 @@ const PageWrapper = styled.div`
   background-size: cover;
   font-family: ${(props) => props.theme.fonts.victor};
   overflow-x: hidden;
+  line-height: 1.6;
 `;
 
 const GlowingEffect = styled.div`
