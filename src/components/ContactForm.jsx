@@ -42,6 +42,13 @@ const Form = styled.form`
   ${media.smedium`
       width:90%;
       height:fit-content;
+      grid-template-columns:1fr;
+      grid-template-areas:
+      'name'
+      'email'
+      'message'
+      'submit'
+      'cancel';
       `}
 `;
 
@@ -50,6 +57,11 @@ const Input = styled.input`
   height: 4rem;
   border-radius: .5rem;
   padding: .5rem;
+
+  ${media.small`
+      height:2.5rem;
+      font-size:1rem;
+      `}
 `;
 
 const Name = styled(Input)`
@@ -78,6 +90,11 @@ const Button = styled.button`
   transition: all ease-in .2s;
   border: none;
   outline: none;
+  
+  ${media.small`
+      height:2.5rem;
+      font-size:1rem;
+      `}
 `;
 const SubmitButton = styled(Button)`
   grid-area: submit;
