@@ -29,13 +29,14 @@ const Form = styled.form`
   "email email"
   "message message"
   "submit cancel";
-  gap: 20px;
+  gap: 1rem;
 
   ${media.medium`
       max-width:unset;
       max-height:unset;
       width: 70%;
       height:fit-content;
+      gap:.5rem;
       `}
 
   ${media.smedium`
