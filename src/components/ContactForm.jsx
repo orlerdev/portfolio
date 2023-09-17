@@ -30,18 +30,19 @@ const Form = styled.form`
   "message message"
   "submit cancel";
   gap: 1rem;
+  margin:0;
 
   ${media.medium`
       max-width:unset;
       max-height:unset;
       width: 70%;
       height:fit-content;
-      gap:.5rem;
       `}
 
   ${media.smedium`
       width:90%;
       height:fit-content;
+      gap:.5rem;
       grid-template-columns:1fr;
       grid-template-areas:
       'name'
