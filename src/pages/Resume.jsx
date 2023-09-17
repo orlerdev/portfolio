@@ -46,7 +46,7 @@ const SPAN = styled.span`
   border-radius: .2rem;
   padding: 8px 6px;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
 
   ${media.medium`
@@ -65,7 +65,7 @@ const A = styled.a`
   border-radius: .2rem;
   padding: 8px 6px;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 
   ${media.medium`
       font-size:1rem;
