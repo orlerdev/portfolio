@@ -17,7 +17,6 @@ const ProjectsWrapper = styled.div`
 `;
 
 const ProjectContainer = styled.div`
-  position: relative;
 `;
 
 const ProjectTitle = styled.h2`
@@ -32,6 +31,7 @@ const ProjectLink = styled.a`
 `;
 
 const PhotoWrapper = styled.div`
+  position:relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -49,41 +49,46 @@ const ProjectDescription = styled.p`
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform:translateX(-50%);
-  width: 80%;
+  transform: translateX(-50%);
+  width:80%;
   height: fit-content;
-  padding:1rem;
+  opacity: ${props => props.isHovered ? '1' : '0'};
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem;
   border-radius: 0 0 1rem 1rem;
   background: ${props => props.theme.colors.frosted};
   backdrop-filter: blur(20px);
   pointer-events: none;
+  box-shadow: ${props => props.theme.colors.boxShadow};
   color: ${props => props.theme.colors.altText};
-  transition: all ease .3s;
+  transition: opacity .3s ease;
   z-index: 3;
 `;
 
 
 const Projects = () => {
-  const [hoveredProject, setHoveredProject] = useState(null);
+  const [hoveredPhoto, setHoveredPhoto] = useState(null);
 
 
   return (
     <DefaultLayout>
       <ProjectsWrapper>
         {projects.map(project => (
-          <ProjectContainer key={project.title}
-                            onMouseEnter={() => setHoveredProject(project)}
-                            onMouseLeave={() => setHoveredProject(null)}
-          >
+          <ProjectContainer key={project.title}>
             <ProjectTitle>{project.title}</ProjectTitle>
             <ProjectLink href={project.link} target='_blank' rel='noreferrer'>
               <PhotoWrapper>
-                <ProjectPhoto src={project.image} alt='Project Photo'/>
+                <ProjectPhoto
+                  src={project.image}
+                  alt='Project Photo'
+                  onMouseEnter={() => setHoveredPhoto(project.title)}
+                  onMouseLeave={() => setHoveredPhoto(null)}
+                />
+                  <ProjectDescription isHovered={hoveredPhoto === project.title}>{project.body}</ProjectDescription>
               </PhotoWrapper>
             </ProjectLink>
-            {hoveredProject &&
-              <ProjectDescription>{project.body}</ProjectDescription>
-            }
+
           </ProjectContainer>
         ))}
       </ProjectsWrapper>
@@ -91,11 +96,3 @@ const Projects = () => {
   );
 };
 export default Projects;
-
-
-// <ProjectTitle>Dungeons & Dust Bunnies</ProjectTitle>
-// <ProjectLink href='https://dndb.me' target='_blank' rel="noreferrer">
-//   <PhotoWrapper>
-//     <ProjectPhoto src={DNDB} alt='Dungeons and Dust Bunnies home page photo'/>
-//   </PhotoWrapper>
-// </ProjectLink>
