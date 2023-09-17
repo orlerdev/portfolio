@@ -223,6 +223,9 @@ const SummaryPara = styled(P)`
 `;
 // PROJECTS
 const Projects = styled(SECTION)``;
+const ProjectsTitle = styled(H2)`
+  margin-bottom:.5rem;
+`;
 const Project = styled.div`
   display: flex;
   flex-direction: column;
@@ -249,7 +252,12 @@ const ProjectBody = styled(P)`
   padding: 1rem;
 `;
 // EXPERIENCE
-const Experience = styled(SECTION)``;
+const Experience = styled(SECTION)`
+  display:flex;
+  flex-direction:column;
+  row-gap:1rem;
+`;
+const ExperiencesTitle = styled(H2)``;
 const ExperienceContainer = styled.div`
   border: 1px solid ${props => props.theme.colors.altText};
   border-radius: .5rem;
@@ -457,7 +465,7 @@ const Resume = () => {
                             <Contact onClick={(e) => {
                                 e.stopPropagation();
                                 toggleModal();
-                            }}>Contact Me!</Contact>
+                            }}>Contact Me</Contact>
                         </InfoContainer>
                         <InfoContainer>
                             {!isMobileView &&
@@ -496,7 +504,7 @@ const Resume = () => {
                     </SummaryPara>
                 </Summary>
                 <Projects>
-                    <SectionTitle>PROJECTS</SectionTitle>
+                    <ProjectsTitle>PROJECTS</ProjectsTitle>
                     {projects.map(project => (<Project
                         key={project.title}
                         onMouseEnter={() => setHoveredProject(project)}
@@ -507,7 +515,7 @@ const Resume = () => {
                     </Project>))}
                 </Projects>
                 <Experience>
-                    <SectionTitle>EXPERIENCE</SectionTitle>
+                    <ExperiencesTitle>EXPERIENCE</ExperiencesTitle>
                     {experiences.map(exp => (<ExperienceContainer key={exp.title}>
                         <SectionSubtitle>{exp.title}</SectionSubtitle>
                         <ExpPara>{exp.dates}</ExpPara>
