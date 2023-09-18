@@ -46,7 +46,7 @@ app.post('/send-email', (req, res) => {
     `
   }
 
-  sgMail.send(msg)
+  sgMail.send([msgToMe, msgToUser])
     .then(() => res.status(200).send({ success: true }))
     .catch(error => {
       console.error(error);

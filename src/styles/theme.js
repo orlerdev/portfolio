@@ -27,9 +27,6 @@ const theme = {
     borderColor: '#fff'
   },
   effects: {
-    blur: '1rem',
-    fs: 'clamp(3rem, 8vw, 7rem',
-    ls: 'clamp(-1.75px, -0.25vw, -3.5px',
     darkBoxShadow: '#493c33 inset 0 0 6px 3px',
     lightBoxShadow: '#fff inset 0 0 6px 3px'
   },
@@ -39,6 +36,3 @@ const theme = {
   }
 };
 export default theme;
-
-// background: #5E9596;
-// background: radial-gradient(at left top, #5E9596, #D4926A);
