@@ -97,7 +97,11 @@ const TechStack = () => {
   useEffect(() => {
     const importImages = async () => {
       const paths = [];
+      const skipValues = [1,6,7,12,15,18,19];
       for (let i = 1; i <= 20; i++) {
+        if (skipValues.includes(i)) {
+          continue;
+        }
         const imagePath = await import (`../assets/${i}.png`);
         paths.push(imagePath.default);
       }
