@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import styled from '@emotion/styled';
 import DefaultLayout from '../layouts/DefaultLayout.jsx';
 import {projects} from "../data/projects.js";
@@ -68,34 +68,34 @@ const ProjectDescription = styled.p`
 
 
 const Projects = () => {
-    const [hoveredPhoto, setHoveredPhoto] = useState(null);
-    const [isTouchDevice, setIsTouchDevice] = useState('ontouchstart' in window);
+  const [hoveredPhoto, setHoveredPhoto] = useState(null);
+  const [isTouchDevice, setIsTouchDevice] = useState('ontouchstart' in window);
 
-    return (
-        <DefaultLayout>
-            <ProjectsWrapper>
-                {projects.map(project => (
-                    <ProjectContainer key={project.title}>
-                        <ProjectTitle>{project.title}</ProjectTitle>
-                        <ProjectLink href={project.link} target='_blank' rel='noreferrer'>
-                            <PhotoWrapper>
-                                <ProjectPhoto
-                                    src={project.image}
-                                    alt='Project Photo'
-                                    onMouseEnter={() => setHoveredPhoto(project.title)}
-                                    onMouseLeave={() => setHoveredPhoto(null)}
-                                />
-                                {!isTouchDevice &&
-                                    <ProjectDescription
-                                        isHovered={hoveredPhoto === project.title}>{project.body}</ProjectDescription>
-                                }
-                            </PhotoWrapper>
-                        </ProjectLink>
+  return (
+    <DefaultLayout>
+      <ProjectsWrapper>
+        {projects.map(project => (
+          <ProjectContainer key={project.title}>
+            <ProjectTitle>{project.title}</ProjectTitle>
+            <ProjectLink href={project.link} target='_blank' rel='noreferrer'>
+              <PhotoWrapper>
+                <ProjectPhoto
+                  src={project.image}
+                  alt='Project Photo'
+                  onMouseEnter={() => setHoveredPhoto(project.title)}
+                  onMouseLeave={() => setHoveredPhoto(null)}
+                />
+                {!isTouchDevice &&
+                  <ProjectDescription
+                    isHovered={hoveredPhoto === project.title}>{project.body}</ProjectDescription>
+                }
+              </PhotoWrapper>
+            </ProjectLink>
 
-                    </ProjectContainer>
-                ))}
-            </ProjectsWrapper>
-        </DefaultLayout>
-    );
+          </ProjectContainer>
+        ))}
+      </ProjectsWrapper>
+    </DefaultLayout>
+  );
 };
 export default Projects;
