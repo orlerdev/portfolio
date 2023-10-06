@@ -91,10 +91,10 @@ const Projects = () => {
                 }
               </PhotoWrapper>
             </ProjectLink>
-
           </ProjectContainer>
         ))}
       </ProjectsWrapper>
+
     </DefaultLayout>
   );
 };
