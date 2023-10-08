@@ -127,7 +127,7 @@ const ContactForm = ({toggleModal}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('https://us-central1-portfolio-7e0ed.cloudfunctions.net/contactForm/send-email', formData);
+            const res = await axios.post('https://us-central1-portfolio-7e0ed.cloudfunctions.net/api/send-email', formData);
             if (res.data.success) {
                 alert('Message sent successfully!');
                 setFormData({name: '', email: '', message: ''});

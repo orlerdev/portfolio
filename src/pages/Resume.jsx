@@ -494,7 +494,7 @@ const Resume = () => {
                 <Summary>
                     <SummaryTitle>SUMMARY</SummaryTitle>
                     <SummaryPara>
-                        Proud military veteran and Full Stack Software Developer with
+                        Full Stack Software Developer and military veteran with
                         exceptional leadership skills. Experience in operational risk
                         management, personnel evaluations, and overhauling procedures.
                         Successfully developed training programs, facilitated high-risk
