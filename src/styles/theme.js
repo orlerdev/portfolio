@@ -17,7 +17,7 @@ const theme = {
     background: '#807d7f',
     backgroundImage: 'linear-gradient(to bottom right, rgba(0,0,0,.1), #878681, rgba(0,0,0,.2))',
     frosted: 'rgba(79,166,201,0.7)',
-    text: '#807d7f',
+    text: '#817d7f',
     altText: '#fff',
     boxShadow: 'inset 1px 1.5px 2px #fff9, inset 1px -0.5px 2px #ffffff4d, 0 0.6021873017743928px 0.6021873017743928px -1.25px #0000002e, 0 2.288533303243457px 2.288533303243457px -2.5px #00000029, 0 10px 10px -3.75px #00000010'
   },
